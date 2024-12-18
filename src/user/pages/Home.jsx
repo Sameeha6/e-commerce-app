@@ -27,7 +27,7 @@ const Home = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
         {mobiles.map((mobile) => (
           <Link to={`/product/${mobile.id}`}  key={mobile.id} >
-            <div className="bg-white p-4 rounded-md shadow-xl transition duration-200 flex flex-col">
+            <div className="bg-white p-4 rounded-md shadow-xl hover:shadow-xl transform transition duration-300 hover:scale-105 flex flex-col">
                 <div className="w-full h-40 sm:h-40 md:h-48 lg:h-52 overflow-hidden rounded-lg flex justify-center">
                     <img
                     src={mobile.image}
