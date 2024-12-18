@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { useCart} from "../../contexts/CartContext"
 
 
 const Home = () => {
   const [mobiles, setMobiles] = useState([]);
+  const { addToCart } = useCart()
 
   useEffect(() => {
     // Fetching data from the JSON server
@@ -17,6 +19,7 @@ const Home = () => {
         console.error("There was an error fetching the data!", error);
       });
   }, []);
+
 
   return (
     <div className="container mx-auto py-4 px-16">
@@ -37,7 +40,12 @@ const Home = () => {
                 <p className="text-gray-600 mt-1 truncate text-xs">{mobile.description}</p>
                 <div className="flex justify-between items-center mt-4">
                 <span className="text-xs font-bold">₹{mobile.price}</span>
-                <button className="bg-orange-500 text-white px-1 py-2 rounded-full hover:bg-orange-600 min-w-[80px] text-xs">
+                <button 
+                  className="bg-orange-500 text-white px-1 py-2 rounded-full hover:bg-orange-600 min-w-[80px] text-xs"
+                  onClick={(e) =>{
+                    e.preventDefault()
+                    addToCart(mobile)
+                    alert(`Added ${mobile.name} to the cart`)}}>
                     Add to Cart
                 </button>
                 </div>
@@ -51,4 +59,3 @@ const Home = () => {
 };
 
 export default Home;
-

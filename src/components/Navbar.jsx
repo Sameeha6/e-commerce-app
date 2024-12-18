@@ -4,7 +4,7 @@ import { useUser } from '../contexts/UserContext'; // Import the UserContext hoo
 
 
 function Navbar() {
-    const { username, logout } = useUser(); // Get username and logout from context
+    const { username, handleLogout } = useUser(); // Get username and logout from context
 
   return (
 
@@ -35,7 +35,7 @@ function Navbar() {
             <span className="font-normal text-sm">{username}</span>
             <button
               className='bg-orange-500 px-3 py-1 rounded-full hover:bg-orange-600 text-white'
-              onClick={logout} // Trigger the logout function
+              onClick={handleLogout} // Trigger the logout function
             >
               Sign Out
             </button>

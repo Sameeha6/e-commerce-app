@@ -4,7 +4,7 @@ import axios from "axios";
 import { useUser } from "../contexts/UserContext";
 
 const Login =() => {
-    const { setUsername } = useUser();
+    const { handleLogin } = useUser();
     const navigate = useNavigate();
     const [form,setForm] = useState({email:"",password:""})
     const [message,setMessage] = useState("");
@@ -21,7 +21,7 @@ const Login =() => {
                 params: { email: form.email, password: form.password },
               });
             if (data.length > 0){
-                setUsername(data[0].name);
+                handleLogin(data[0].email);
                 navigate("/");
             }
             else setMessage ("Invalid email or password")

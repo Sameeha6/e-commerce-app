@@ -3,8 +3,8 @@ import React from 'react'
 function Footer() {
   return (
     <div>
-      <footer className="bg-gray-900 text-white py-4 shadow-lg">
-            <div className="max-w-7xl mx-auto px-4 text-center">
+      <footer className="bg-gray-900 text-white py-2 shadow-lg">
+            <div className="max-w-7xl mx-auto px-2 text-center">
                 <p className="text-sm">
                     &copy; 2024 E-Shop. All rights reserved.
                 </p>
