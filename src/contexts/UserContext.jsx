@@ -26,13 +26,7 @@ export const UserProvider = ({ children }) => {
   };
 
   return (
-    <UserContext.Provider
-      value={{
-        email,username,
-        handleLogin, // Use this for login functionality
-        handleLogout,
-      }}
-    >
+    <UserContext.Provider value={{email,username,handleLogin, handleLogout}}>
       {children}
     </UserContext.Provider>
   );

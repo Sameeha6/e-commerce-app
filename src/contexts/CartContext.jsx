@@ -40,10 +40,7 @@ export const CartProvider = ({ children }) => {
         .then((res) => res.json())
         .then((data) => {
           setCart((prevCart) =>
-            prevCart.map((item) =>
-              item.id === product.id
-                ? { ...item, quantity: item.quantity + 1 }
-                : item
+            prevCart.map((item) =>item.id === product.id? { ...item, quantity: item.quantity + 1 }: item
             )
           );
         })

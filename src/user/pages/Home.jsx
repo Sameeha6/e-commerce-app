@@ -1,33 +1,49 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+// import axios from "axios";
 import { Link } from "react-router-dom";
-import { useCart} from "../../contexts/CartContext"
+import { useCart} from "../../contexts/CartContext";
+import { getAllProduct } from "../../api/productApi";
 
 
 const Home = () => {
   const [mobiles, setMobiles] = useState([]);
+  const [error, setError] = useState("");
   const { addToCart } = useCart()
 
+  // useEffect(() => {
+  //   // Fetching data from the JSON server
+  //   axios
+  //     .get("http://localhost:5000/mobiles")
+  //     .then((response) => {
+  //       setMobiles(response.data);
+  //     })
+  //     .catch((error) => {
+  //       console.error("There was an error fetching the data!", error);
+  //     });
+  // }, []);
+
   useEffect(() => {
-    // Fetching data from the JSON server
-    axios
-      .get("http://localhost:5000/mobiles")
-      .then((response) => {
-        setMobiles(response.data);
-      })
-      .catch((error) => {
-        console.error("There was an error fetching the data!", error);
-      });
+    const fetchProducts = async () => {
+      try {
+        const response = await getAllProduct(); // Use the function from ProductApi.js
+        setMobiles(response.data); // Response contains the products
+      } catch (error) {
+        console.error("Failed to fetch products: ", error);
+        setError("Error fetching product details");
+      }
+    };
+
+    fetchProducts();
   }, []);
 
 
   return (
-    <div className="container mx-auto py-4 px-16">
-      {/* <h1 className="text-xl font-bold">Featured Mobile Phones</h1> */}
+    <div className="container mx-auto p-4">
+      {error && <p className="text-red-500 mb-4">{error}</p>}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
         {mobiles.map((mobile) => (
           <Link to={`/product/${mobile.id}`}  key={mobile.id} >
-            <div className="bg-white p-4 rounded-md shadow-xl hover:shadow-xl transform transition duration-300 hover:scale-105 flex flex-col">
+            <div className="bg-white p-4 rounded-md shadow-xl hover:shadow-2xl transform transition duration-300 hover:scale-105 flex flex-col">
                 <div className="w-full h-40 sm:h-40 md:h-48 lg:h-52 overflow-hidden rounded-lg flex justify-center">
                     <img
                     src={mobile.image}
