@@ -4,7 +4,7 @@ import { useUser } from '../contexts/UserContext'; // Import the UserContext hoo
 import { useCart } from "../contexts/CartContext";
 
 function Navbar() {
-    const { username, handleLogout } = useUser(); // Get username and logout from context
+    const { user, handleLogout } = useUser(); // Get username and logout from context
     const { cart } = useCart();
     const [isMenuOpen, setIsMenuOpen] = useState(false); // State for hamburger men
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
@@ -29,11 +29,11 @@ function Navbar() {
         </div>
         <div className="flex items-center space-x-2">
                 <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="profile" className='w-8 h-8 hidden md:block' />
-                {username ? (
+                {user ? (
               <>
-                <span className="font-normal text-sm">{username}</span>
+                <span className="font-normal text-sm hidden md:block">{user.name}</span>
                 <button
-                  className='bg-orange-500 px-3 py-1 rounded-full hover:bg-orange-600 text-white'
+                  className='bg-orange-500 px-3 py-1 rounded-full hover:bg-orange-600 text-white hidden md:block'
                   onClick={handleLogout} // Trigger the logout function
                 >
                   Sign Out
@@ -85,9 +85,9 @@ function Navbar() {
             </li>
             <div className="flex items-center space-x-2">
                 <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="profile" className='w-8 h-8' />
-                {username ? (
+                {user ? (
               <>
-                <span className="font-normal text-sm">{username}</span>
+                <span className="font-normal text-sm">{user.name}</span>
                 <button
                   className='bg-orange-500 px-3 py-1 rounded-full hover:bg-orange-600 text-white'
                   onClick={handleLogout} // Trigger the logout function

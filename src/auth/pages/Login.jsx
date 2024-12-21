@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
-import axios from "axios";
-import { useUser } from "../contexts/UserContext";
+import { NavLink } from "react-router-dom";
+// import axios from "axios";
+import { useUser } from "../../contexts/UserContext";
 
 const Login =() => {
     const { handleLogin } = useUser();
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     const [form,setForm] = useState({email:"",password:""})
     const [message,setMessage] = useState("");
 
@@ -17,19 +17,14 @@ const Login =() => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const { data } = await axios.get("http://localhost:5000/users", {
-                params: { email: form.email, password: form.password },
-              });
-            if (data.length > 0){
-                handleLogin(data[0].email);
-                navigate("/");
-            }
-            else setMessage ("Invalid email or password")
-        } catch (error) {
+            const response = await handleLogin(form.email,form.password);
+            setMessage(response)
+          } catch (error) {
             console.error("Login Error:", error);
-            setMessage("An error occurred");
-        }
-    }
+            setMessage("An unexpected error occurred. Please try again.");
+          }
+          
+        };
 
     return(
         <div className="flex justify-center h-screen w-screen items-center">

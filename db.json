@@ -112,19 +112,47 @@
       "name": "John Doe",
       "email": "john.doe@example.com",
       "password": "123456",
-      "role": "user"
+      "role": "user",
+      "cart": []
     },
     {
       "id": "2dbd",
       "name": "sameeha",
       "email": "sameehasirajt@gmail.com",
-      "password": "password123"
+      "password": "password123",
+      "cart": [
+        {
+          "id": "1",
+          "name": "iPhone 14",
+          "price": 52000,
+          "image": "https://www.imagineonline.store/cdn/shop/files/iPhone_14_Pro_Deep_Purple_PDP_Image_Position-1a__WWEN.jpg?v=1692348972",
+          "description": "6GB RAM + 128GB Storage | 6.1-inch Super Retina XDR Display | IP68 Water & Dust Resistance | A15 Bionic Chip | 12MP Dual Rear Cameras | 20-Hour Video Playback | Fast Charging Support",
+          "qty": 2
+        }
+      ]
     },
     {
       "id": "8be7",
       "name": "fathima",
       "email": "fathima@gmail.com",
-      "password": "password456"
+      "password": "password456",
+      "cart": [
+        {
+          "id": "9",
+          "name": "Sony Xperia 1 IV",
+          "price": 129999,
+          "image": "https://28mobile.com/cdn/shop/products/BLACK_8@2x.jpg?v=1665817259",
+          "description": "12GB RAM + 256GB Storage | 6.5-inch 4K OLED Display | IP68 Water & Dust Resistance | Snapdragon 8 Gen 1 | 12MP Triple Rear Cameras | 5000mAh Battery | 30W Fast Charging",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "id": "5088",
+      "name": "feliz",
+      "email": "feliz@gmail.com",
+      "password": "fezu",
+      "cart": []
     }
   ],
   "cart": [
@@ -145,6 +173,80 @@
       "description": "8GB RAM + 128GB Storage | 6.2-inch OLED Display | IP68 Water & Dust Resistance | Google Tensor G3 Chip | 50MP Dual Rear Cameras | 4000mAh Battery | 30W Fast Charging",
       "email": "fathima@gmail.com",
       "quantity": -1
+    }
+  ],
+  "orders": [
+    {
+      "id": "7698",
+      "userId": "1",
+      "items": [
+        {
+          "id": "11",
+          "name": "Nokia G50",
+          "price": 18999,
+          "image": "https://28mobile.com/cdn/shop/products/NokiaG50TA-13616_128GbBlue_grande@2x.jpg?v=1667547713",
+          "description": "4GB RAM + 64GB Storage | 6.82-inch HD+ Display | IP52 Water & Dust Resistance | Snapdragon 480 5G | 48MP Triple Rear Cameras | 5000mAh Battery | 18W Fast Charging",
+          "qty": 1
+        }
+      ],
+      "total": 18999,
+      "paymentMethod": "Cash on Delivery",
+      "address": {
+        "street": "house",
+        "city": "kozhikode",
+        "state": "kerala",
+        "zip": "673302",
+        "country": "india"
+      },
+      "date": "2024-12-21T18:09:41.806Z"
+    },
+    {
+      "id": "0030",
+      "userId": "1",
+      "items": [
+        {
+          "id": "2",
+          "name": "Samsung Galaxy S23",
+          "price": 79999,
+          "image": "https://m.media-amazon.com/images/I/51hqXIAVXAL.jpg",
+          "description": "8GB RAM + 128GB Storage | 6.1-inch Dynamic AMOLED 2X Display | IP68 Water & Dust Resistance | Snapdragon 8 Gen 2 | 50MP Triple Rear Cameras | 3900mAh Battery | 25W Fast Charging",
+          "qty": 1
+        }
+      ],
+      "total": 79999,
+      "paymentMethod": "PayPal",
+      "address": {
+        "street": "house",
+        "city": "kozhikode",
+        "state": "kerala",
+        "zip": "673302",
+        "country": "india"
+      },
+      "date": "2024-12-21T18:11:22.740Z"
+    },
+    {
+      "id": "eda2",
+      "userId": "5088",
+      "items": [
+        {
+          "id": "13",
+          "name": "Huawei P50 Pro",
+          "price": 89999,
+          "image": "https://media.wisemarket.ae/variant/inventory_30097.webp",
+          "description": "8GB RAM + 256GB Storage | 6.6-inch OLED Display | IP68 Water & Dust Resistance | Kirin 9000 5G | 50MP Quad Rear Cameras | 4360mAh Battery | 50W Wireless Charging",
+          "qty": 1
+        }
+      ],
+      "total": 89999,
+      "paymentMethod": "Credit Card",
+      "address": {
+        "street": "house",
+        "city": "kozhikode",
+        "state": "kerala",
+        "zip": "673302",
+        "country": "india"
+      },
+      "date": "2024-12-21T18:28:59.557Z"
     }
   ]
 }

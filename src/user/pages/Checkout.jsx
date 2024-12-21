@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../../contexts/CartContext";
-import { useUser } from "../../contexts/UserContext";
+// import { useUser } from "../../contexts/UserContext";
+import { addOrder } from "../../api/userApi";
 
 const Checkout = () => {
-  const { cart , clearCart } = useCart();
-  const { email } = useUser()
-  const getTotalPrice = () =>  cart.reduce((total, item) => total + item.price * item.quantity, 0);
+  const { cart , clearCart, totalPrice } = useCart();
+//   const { user } = useUser()
+  const getTotalPrice = () =>  cart.reduce((total, item) => total + item.price * item.qty, 0);
   const navigate = useNavigate();
   const [selectedPayment, setSelectedPayment] = useState("");
   const [address, setAddress] = useState({ street: "", city: "", state: "", zip: "", country: "" });
+  const userId = localStorage.getItem("userId");
+ 
 
 
 
@@ -22,30 +25,44 @@ const Checkout = () => {
         alert("Please fill out all address fields."); 
         return; 
     }
-    const orderDetails = {
-      email, // Get from UserContext
-      items: cart.map((item) => ({
-        id: item.id,
-        name: item.name,
-        quantity: item.quantity,
-        price: item.price,
-      })),
-      total: getTotalPrice(),
-      paymentMethod: selectedPayment,
-      address: address,
-      date: new Date().toISOString(),
-    };
+    if(!cart.length>0){
+        alert("Please add items to cart to checkout.")
+        return;
+      } 
+  
+    // const orderDetails = {
+    //   email, // Get from UserContext
+    //   items: cart.map((item) => ({
+    //     id: item.id,
+    //     name: item.name,
+    //     quantity: item.quantity,
+    //     price: item.price,
+    //   })),
+    //   total: getTotalPrice(),
+    //   paymentMethod: selectedPayment,
+    //   address: address,
+    //   date: new Date().toISOString(),
+    // };
 
     try {
-      const response = await fetch("http://localhost:5001/orders", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(orderDetails),
-      });
+    //   const response = await fetch("http://localhost:5001/orders", {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify(orderDetails),
+    //   });
 
-      if (response.ok) {
+    const orderDetials = {
+        userId,
+        items: cart,
+        total: totalPrice,
+        paymentMethod: selectedPayment,
+        address: address,
+        date: new Date().toISOString(),
+      };
+      const response = await addOrder(orderDetials);
+      if (response) {
         alert(`Order placed successfully with ${selectedPayment}!`);
         clearCart(); // Clear the cart after placing the order
         navigate("/orders");
@@ -87,11 +104,11 @@ const Checkout = () => {
                     />
                     <div>
                       <h4 className="font-semibold">{product.name}</h4>
-                      <p>₹{product.price} x {product.quantity}</p>
+                      <p>₹{product.price} x {product.qty}</p>
                     </div>
                   </div>
                   <div className="text-lg font-semibold">
-                    ₹{product.price * product.quantity}
+                    ₹{product.price * product.qty}
                   </div>
                 </div>
               ))}

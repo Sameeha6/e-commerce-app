@@ -4,12 +4,12 @@ import { useNavigate } from "react-router-dom";
 import { useUser } from "../../contexts/UserContext";
 
 const Cart = () => {
-  const { cart, removeFromCart, clearCart, updateQuantity } = useCart();
+  const { cart, removeFromCart, clearCart, updateQuantity,totalPrice } = useCart();
   const navigate = useNavigate();
-  const { email } = useUser();
+  const { user } = useUser();
 
-  const getTotalPrice = () =>
-    cart.reduce((total, item) => total + item.price * item.quantity, 0);
+//   const getTotalPrice = () =>
+//     cart.reduce((total, item) => total + item.price * item.quantity, 0);
 
   const handleCheckout = () => {
     if(cart.length === 0){
@@ -18,7 +18,7 @@ const Cart = () => {
     navigate("/checkout");
   };
 
-  if (!email) return <p>Please log in to view your cart.</p>;
+  if (!user) return <p>Please log in to view your cart.</p>;
 
   return (
     <div className="max-w-5xl mx-auto py-4 px-2">
@@ -50,7 +50,7 @@ const Cart = () => {
                 >
                   -
                 </button>
-                <span className="text-lg font-semibold">{product.quantity}</span>
+                <span className="text-lg font-semibold">{product.qty}</span>
                 <button
                   onClick={() => updateQuantity(product.id, 1)}
                   className=" text-gray-900 px-2 py-1 rounded hover:text-gray-950"
@@ -68,7 +68,7 @@ const Cart = () => {
             </div>
           ))}
           <div className="mt-2 flex justify-between items-center">
-            <h3 className="text-lg font-bold">Total: ₹{getTotalPrice()}</h3>
+            <h3 className="text-lg font-bold">Total: ₹{totalPrice}</h3>
             <div className="space-x-4">
               <button
                 onClick={clearCart}

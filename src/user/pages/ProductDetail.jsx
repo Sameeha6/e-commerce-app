@@ -46,6 +46,8 @@ const ProductDetails = () => {
 
   return (
     <div className="product-details container mx-auto py-4 px-4 md:px-16">
+      {product && (
+        <>
       <div className="flex flex-col md:flex-row items-center md:items-start">
         <div className="w-full md:w-1/2 mb-4 md:mb-0">
           <img
@@ -68,6 +70,8 @@ const ProductDetails = () => {
           </button>
         </div>
       </div>
+      </>
+      )}
     </div>
   );
 };
