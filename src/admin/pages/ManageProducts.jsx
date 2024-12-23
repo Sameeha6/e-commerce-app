@@ -27,7 +27,7 @@ const ManageProducts = () => {
 
     return (
         <div className="container mx-auto">
-            <header className="bg-white shadow-lg p-4 sm:p-6">
+            <header className="bg-white shadow-lg p-4">
                 <h1 className="text-2xl font-bold text-gray-800">Manage Products</h1>
             </header>
             <div className= " mb-8 px-6">
