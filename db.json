@@ -184,6 +184,14 @@
           "image": "https://images.jdmagicbox.com/quickquotes/images_main/gt-2-pro-ram-12-gb-256-gb-paper-green-271165723-mgz93q4t.png",
           "description": "12GB RAM + 256GB Storage | 6.7-inch AMOLED Display | IP68 Water & Dust Resistance | Snapdragon 8 Gen 1 | 50MP Triple Rear Cameras | 5000mAh Battery | 65W Fast Charging",
           "qty": 1
+        },
+        {
+          "id": "5",
+          "name": "Xiaomi Mi 13",
+          "price": 39999,
+          "image": "https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1677429532.40596257.png",
+          "description": "12GB RAM + 256GB Storage | 6.36-inch AMOLED Display | IP68 Water & Dust Resistance | Snapdragon 8 Gen 2 | 50MP Triple Rear Cameras | 4500mAh Battery | 67W Fast Charging",
+          "qty": 1
         }
       ]
     },

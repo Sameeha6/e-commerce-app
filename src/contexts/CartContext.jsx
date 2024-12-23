@@ -46,7 +46,7 @@ const fetchUser = async (userId) => {
 const updateServerCart = async (cartData) => {
     try {
       const updatedUser = {...newuser,cart:cartData}
-      await updateCart(user.id,updatedUser);
+      await updateCart(userId,updatedUser);
       setCart(cartData);
     } catch (error) {
       console.log("Error updating cart:",error);        
