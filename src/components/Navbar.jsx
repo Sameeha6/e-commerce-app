@@ -14,10 +14,10 @@ function Navbar() {
 
   return (
 
-    <div className='Navbar w-full h-[77px] p-4 bg-white flex items-center z-50 justify-between shadow-lg'>
-        <div className='flex items-center space-x-2'>
+    <div className='Navbar  sticky top-0 w-full h-[77px] p-4 bg-white flex items-center z-50 justify-between shadow-lg'>
+        <div className='flex items-center'>
             <img src="https://cdn-icons-png.flaticon.com/512/12517/12517190.png" alt="logo" className='w-14 h-14'/>
-            <p className='font-bold text-xl md:2xl'>.com</p>
+            <p className='font-bold text-2xl md:2xl'>.com</p>
         </div>
         <div className='hidden md:flex justify-center space-x-4 text-lg font-semibold'>
             <ul className='flex space-x-4 '>
@@ -65,7 +65,7 @@ function Navbar() {
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/255px-Hamburger_icon.svg.png"
             alt="menu-icon"
-            className="w-8 h-8"
+            className="w-7 h-7"
           />
         </button>
       </div>
@@ -74,27 +74,27 @@ function Navbar() {
         <div className="absolute top-[70px] left-0 w-full bg-white shadow-md md:hidden z-50">
           <ul className="flex flex-col items-start space-y-2 p-4 font-semibold text-lg">
               <NavLink to="/" className="hover:text-orange-500"><li>Home</li></NavLink>
-              <NavLink to="/Cart" className="hover:text-orange-500"><li>Cart <span className='text-sm px-1 rounded-full bg-orange-400'>{cart && cart.length || 0}</span></li></NavLink>
+              <NavLink to="/Cart" className="hover:text-orange-500"><li>Cart {cart.length >0 && (<span className='text-sm px-1 rounded-full bg-orange-400'>{cart.length}</span>)}</li></NavLink>
               <NavLink to="/Order" className="hover:text-orange-500"><li>Order</li></NavLink>
               <li className="w-full">
               <div className="flex items-center space-x-2">
                 <input
                   type="text"
                   placeholder="Search here..."
-                  className="flex-grow rounded p-2 border border-slate-300"
+                  className="flex-grow rounded px-2 py-1 border border-slate-300"
                 />
-                <button className="bg-blue-500 rounded-lg p-2 text-white hover:bg-blue-400">
+                <button className="bg-blue-500 rounded-lg px-2 py-1 text-white hover:bg-blue-400 font-normal text-base">
                   Search
                 </button>
               </div>
             </li>
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-2 space-y-2">
                 <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="profile" className='w-8 h-8' />
                 {userName ? (
               <>
                 <span className="font-normal text-sm">{userName}</span>
                 <button
-                  className='bg-orange-500 px-3 py-1 rounded-full hover:bg-orange-600 text-white'
+                  className='bg-orange-500 px-3 py-1 rounded-full hover:bg-orange-600 text-white text-base font-normal'
                   onClick={handleLogout} // Trigger the logout function
                 >
                   Sign Out
@@ -103,7 +103,7 @@ function Navbar() {
             ) : (
               <>
                 <NavLink to="/login">
-                  <button className='bg-orange-500 text-white px-2 py-1 rounded-full hover:bg-orange-600'>
+                  <button className='bg-orange-500 text-white px-3 py-1 rounded-full hover:bg-orange-600 text-base font-normal'>
                     Login
                   </button>
                 </NavLink>

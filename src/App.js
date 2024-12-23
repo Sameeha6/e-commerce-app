@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 // import { UserProvider } from "./contexts/UserContext";
 // import { CartProvider } from "./contexts/CartContext";
 import UserRouter from "./user/routes/UserRouter";
@@ -13,6 +13,7 @@ import AdminProtectedRoutes from './admin/routes/AdminProtectedRoutes';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import { Notfound } from './components/Notfound';
+import AdminNavbar from "./admin/pages/AdminNavbar";
 
 
 // function App() {
@@ -31,12 +32,11 @@ import { Notfound } from './components/Notfound';
 // }
 
 function App() {
-  // const location = useLocation;
-  // const isAdmin = AdminRouter.some(route => location.pathname.startsWith(route.path));
+  const location = useLocation();
+  const isAdmin = AdminRouter.some(route => location.pathname.startsWith(route.path));
   return (
     <div className="flex flex-col min-h-screen">
-      {/* {isAdmin ? <AdminSidebar/> : <Navbar/>} */}
-      <Navbar/>
+      {isAdmin ? <AdminNavbar/> : <Navbar/>}
         <div className="flex-grow">
           <Routes>
             <Route path="/" element = { <Home/> } />
