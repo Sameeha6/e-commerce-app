@@ -1,6 +1,6 @@
 import React from "react";
 import { useCart } from "../../contexts/CartContext";
-import { useNavigate } from "react-router-dom"; 
+import { useNavigate,Link } from "react-router-dom"; 
 import { useUser } from "../../contexts/UserContext";
 
 const Cart = () => {
@@ -22,7 +22,7 @@ const Cart = () => {
 
   return (
     <div className="max-w-5xl mx-auto py-4 px-2">
-      <h2 className="text-lg font-bold mb-4">Shopping Cart</h2>
+      {/* <h2 className="text-lg font-bold mb-4">Shopping Cart</h2> */}
       {cart.length > 0 ? (
         <>
           {cart.map((product) => (
@@ -86,7 +86,24 @@ const Cart = () => {
           </div>
         </>
       ) : (
-        <p>Your cart is empty.</p>
+        // 
+        <div className="flex flex-col items-center p-4">
+      <img
+        src="https://cdn-icons-png.flaticon.com/512/13543/13543366.png"
+        alt="Empty Cart"
+        className="w-52 h-52 object-contain"
+      />
+      <h2 className="text-2xl font-semibold text-gray-700">Your Cart is Empty!</h2>
+      <p className="text-gray-500 mt-2 text-center max-w-md">
+        It seems like you haven’t added anything to your cart yet. Don’t miss out on amazing deals—start shopping now!
+      </p>
+      <Link
+        to="/"
+        className="mt-6 px-6 py-2 bg-orange-500 text-white text-sm font-medium rounded-lg shadow-md hover:bg-orange-600 transition-all"
+      >
+        Shop Now
+      </Link>
+    </div>
       )}
     </div>
   );

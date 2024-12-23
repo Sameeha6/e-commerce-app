@@ -7,28 +7,9 @@ const UserContext = createContext();
 
 // UserProvider
 export const UserProvider = ({ children }) => {
-  // const [email, setEmail] = useState(() => localStorage.getItem("email") || "");
-  // const [username, setUsername] = useState(() => localStorage.getItem("username") || "");
 
   const [user,setUser] = useState();
   const navigate = useNavigate();
-
-  // Handle Login
-  // const handleLogin = (userEmail) => {
-  //   const userUsername = userEmail.split('@')[0]; // Extract username from email 
-  //   localStorage.setItem("email", userEmail); 
-  //   localStorage.setItem("username", userUsername); 
-  //   setEmail(userEmail); 
-  //   setUsername(userUsername)
-  // };
-
-  // Handle Logout
-  // const handleLogout = () => {
-  //   localStorage.removeItem("email");
-  //   localStorage.removeItem("username");
-  //   setEmail("");
-  //   setUsername("");
-  // };
 
   const handleSignup = async(userData) => {
     try {
@@ -63,6 +44,7 @@ export const UserProvider = ({ children }) => {
             setUser(userValidation)
             localStorage.setItem("user",userValidation.email);
             localStorage.setItem("userId",userValidation.id);
+            localStorage.setItem("userName",userValidation.name);
             navigate('/');
             return "";
           }
@@ -76,9 +58,9 @@ export const UserProvider = ({ children }) => {
   };
 
   const handleLogout = () => {
-    setUser([]);
+    setUser(null);
     localStorage.clear();
-    navigate("/login");
+    // navigate("/login");
   };
 
 

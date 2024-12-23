@@ -112,7 +112,7 @@
       "name": "John Doe",
       "email": "john.doe@example.com",
       "password": "123456",
-      "role": "user",
+      "role": "admin",
       "cart": []
     },
     {
@@ -152,7 +152,30 @@
       "name": "feliz",
       "email": "feliz@gmail.com",
       "password": "fezu",
-      "cart": []
+      "cart": [
+        {
+          "id": "3",
+          "name": "Google Pixel 8",
+          "price": 64999,
+          "image": "https://virtual2web.com/12161-superlarge_default/google-pixel-8-pro-5g-12gb-128gb-blanco-porcelain-dual-sim-ga04798.jpg",
+          "description": "8GB RAM + 128GB Storage | 6.2-inch OLED Display | IP68 Water & Dust Resistance | Google Tensor G3 Chip | 50MP Dual Rear Cameras | 4000mAh Battery | 30W Fast Charging",
+          "qty": 1
+        },
+        {
+          "id": "2",
+          "name": "Samsung Galaxy S23",
+          "price": 79999,
+          "image": "https://m.media-amazon.com/images/I/51hqXIAVXAL.jpg",
+          "description": "8GB RAM + 128GB Storage | 6.1-inch Dynamic AMOLED 2X Display | IP68 Water & Dust Resistance | Snapdragon 8 Gen 2 | 50MP Triple Rear Cameras | 3900mAh Battery | 25W Fast Charging",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "id": "c9cd",
+      "name": "lamiya",
+      "email": "lamiya@gmail.com",
+      "password": "lamiya"
     }
   ],
   "cart": [
@@ -247,6 +270,30 @@
         "country": "india"
       },
       "date": "2024-12-21T18:28:59.557Z"
+    },
+    {
+      "id": "033f",
+      "userId": "5088",
+      "items": [
+        {
+          "id": "14",
+          "name": "LG Velvet",
+          "price": 24999,
+          "image": "https://upload.wikimedia.org/wikipedia/commons/d/d4/LG_Velvet_Aurora_Green_version.jpg",
+          "description": "6GB RAM + 128GB Storage | 6.8-inch OLED Display | IP68 Water & Dust Resistance | Snapdragon 765G | 48MP Triple Rear Cameras | 4300mAh Battery | 18W Fast Charging",
+          "qty": 1
+        }
+      ],
+      "total": 24999,
+      "paymentMethod": "Debit Card",
+      "address": {
+        "street": "house",
+        "city": "kozhikode",
+        "state": "kerala",
+        "zip": "673302",
+        "country": "india"
+      },
+      "date": "2024-12-22T05:38:30.237Z"
     }
   ]
 }

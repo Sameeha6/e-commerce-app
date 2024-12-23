@@ -11,6 +11,7 @@ import UserProtectedRouter from './user/routes/UserProtectedRouter';
 import AdminProtectedRoutes from './admin/routes/AdminProtectedRoutes';
 // import AdminNavbar from './admin/pages/AdminNavbar';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 import { Notfound } from './components/Notfound';
 
 
@@ -33,26 +34,29 @@ function App() {
   // const location = useLocation;
   // const isAdmin = AdminRouter.some(route => location.pathname.startsWith(route.path));
   return (
-    <div>
+    <div className="flex flex-col min-h-screen">
       {/* {isAdmin ? <AdminSidebar/> : <Navbar/>} */}
       <Navbar/>
-        <Routes>
-          <Route path="/" element = { <Home/> } />
-          <Route path="/login" element = { <Login/> } />
-          <Route path="/Signup" element = { <Signup/> } />
-          <Route path="/product/:id" element = { <ProductDetail/> } />
-          <Route element={<UserProtectedRouter/>}>
-              {UserRouter.map(({path,element},index)=>(
-                <Route key={index} path={path} element={element}/>
-              ))}
-            </Route>
-            <Route element={<AdminProtectedRoutes/>}>
-              {AdminRouter.map(({path,element},index)=>(
-                <Route key={index} path={path} element={element}/>
-              ))}
-            </Route>
-            <Route path='*' element={<Notfound/>} />
-        </Routes>
+        <div className="flex-grow">
+          <Routes>
+            <Route path="/" element = { <Home/> } />
+            <Route path="/login" element = { <Login/> } />
+            <Route path="/Signup" element = { <Signup/> } />
+            <Route path="/product/:id" element = { <ProductDetail/> } />
+            <Route element={<UserProtectedRouter/>}>
+                {UserRouter.map(({path,element},index)=>(
+                  <Route key={index} path={path} element={element}/>
+                ))}
+              </Route>
+              <Route element={<AdminProtectedRoutes/>}>
+                {AdminRouter.map(({path,element},index)=>(
+                  <Route key={index} path={path} element={element}/>
+                ))}
+              </Route>
+              <Route path='*' element={<Notfound/>} />
+          </Routes>
+          </div>
+        <Footer/>
       </div>
   );
 }

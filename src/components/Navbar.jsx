@@ -7,6 +7,9 @@ function Navbar() {
     const { user, handleLogout } = useUser(); // Get username and logout from context
     const { cart } = useCart();
     const [isMenuOpen, setIsMenuOpen] = useState(false); // State for hamburger men
+    const userName = localStorage.getItem("userName")
+
+
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
@@ -19,7 +22,7 @@ function Navbar() {
         <div className='hidden md:flex justify-center space-x-4 text-lg font-semibold'>
             <ul className='flex space-x-4 '>
                 <NavLink to="/" className="hover:text-orange-500"><li>Home</li></NavLink>
-                <NavLink to="/Cart" className="hover:text-orange-500"><li>Cart <span className='text-sm px-1 rounded-full bg-orange-400'>{cart?.length || 0}</span></li></NavLink>
+                <NavLink to="/Cart" className="hover:text-orange-500"><li>Cart {cart.length >0 && (<span className='text-sm px-1 rounded-full bg-orange-400'>{cart.length}</span>)}</li></NavLink>
                 <NavLink to="/Order" className="hover:text-orange-500"><li>Order</li></NavLink>
             </ul>
         </div>
@@ -28,10 +31,12 @@ function Navbar() {
                 className='p-2 border rounded-md w-[200px] sm:w-[300px] md:w-[400px] lg:w-[500px] ' />
         </div>
         <div className="flex items-center space-x-2">
+        {userName ? (
+          <>
                 <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="profile" className='w-8 h-8 hidden md:block' />
-                {user ? (
-              <>
-                <span className="font-normal text-sm hidden md:block">{user.name}</span>
+                
+              
+                <span className="font-normal text-sm hidden md:block">{userName}</span>
                 <button
                   className='bg-orange-500 px-3 py-1 rounded-full hover:bg-orange-600 text-white hidden md:block'
                   onClick={handleLogout} // Trigger the logout function
