@@ -3,7 +3,7 @@ import { addUser, emailCheck, userCheck } from "../api/userApi";
 import { useNavigate } from "react-router-dom";
 
 // Create UserContext
-const UserContext = createContext();
+export const UserContext = createContext();
 
 // UserProvider
 export const UserProvider = ({ children }) => {
@@ -58,7 +58,7 @@ export const UserProvider = ({ children }) => {
   };
 
   const handleLogout = () => {
-    setUser(null);
+    setUser([]);
     localStorage.clear();
     // navigate("/login");
   };

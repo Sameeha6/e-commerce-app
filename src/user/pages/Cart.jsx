@@ -6,7 +6,7 @@ import { useUser } from "../../contexts/UserContext";
 const Cart = () => {
   const { cart, removeFromCart, clearCart, updateQuantity,totalPrice } = useCart();
   const navigate = useNavigate();
-  const { user } = useUser();
+  const userId = localStorage.getItem("userId")
 
 //   const getTotalPrice = () =>
 //     cart.reduce((total, item) => total + item.price * item.quantity, 0);
@@ -18,7 +18,7 @@ const Cart = () => {
     navigate("/checkout");
   };
 
-  if (!user) return <p>Please log in to view your cart.</p>;
+  if (!userId) return <p>Please log in to view your cart.</p>;
 
   return (
     <div className="max-w-5xl mx-auto py-4 px-2">

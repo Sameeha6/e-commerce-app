@@ -1,5 +1,5 @@
 import React, { createContext, useCallback, useContext, useEffect, useState } from "react";
-import { useUser } from "./UserContext";
+import { UserContext, useUser } from "./UserContext";
 import { getUserbyId } from "../api/userApi";
 import { updateCart } from "../api/productApi";
 
@@ -9,10 +9,10 @@ const CartContext = createContext();
 // CartProvider
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
-  const [newuser,setNewuser] = useState();
+  const [newuser,setNewuser] = useState(null);
 //   const [orders, setOrders] = useState([]);
 const [totalPrice, setTotalPrice] = useState(0);
-  const { user } = useUser();
+  const { user } = useContext(UserContext);
   const userId = localStorage.getItem('userId')
 
 
@@ -28,9 +28,11 @@ const fetchUser = async (userId) => {
 
   useEffect(() => {
     if(userId){
-      fetchUser(userId)
+        fetchUser(userId)
+    }else{
+        setCart([])
     }
-  }, [userId])
+  }, [user])
 
   const totalCartPrice =  useCallback(() =>{
     const total = cart.reduce((total, item) => total + item.price * item.qty, 0);
@@ -43,7 +45,7 @@ const fetchUser = async (userId) => {
 
 const updateServerCart = async (cartData) => {
     try {
-      const updatedUser = {...user,cart:cartData}
+      const updatedUser = {...newuser,cart:cartData}
       await updateCart(user.id,updatedUser);
       setCart(cartData);
     } catch (error) {

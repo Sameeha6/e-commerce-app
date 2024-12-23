@@ -4,7 +4,7 @@ import { useUser } from '../contexts/UserContext'; // Import the UserContext hoo
 import { useCart } from "../contexts/CartContext";
 
 function Navbar() {
-    const { user, handleLogout } = useUser(); // Get username and logout from context
+    const { handleLogout } = useUser(); // Get username and logout from context
     const { cart } = useCart();
     const [isMenuOpen, setIsMenuOpen] = useState(false); // State for hamburger men
     const userName = localStorage.getItem("userName")
@@ -14,7 +14,7 @@ function Navbar() {
 
   return (
 
-    <div className='Navbar w-full h-[77px] p-4 bg-white flex items-center justify-between shadow-lg'>
+    <div className='Navbar w-full h-[77px] p-4 bg-white flex items-center z-50 justify-between shadow-lg'>
         <div className='flex items-center space-x-2'>
             <img src="https://cdn-icons-png.flaticon.com/512/12517/12517190.png" alt="logo" className='w-14 h-14'/>
             <p className='font-bold text-xl md:2xl'>.com</p>
@@ -74,7 +74,7 @@ function Navbar() {
         <div className="absolute top-[70px] left-0 w-full bg-white shadow-md md:hidden z-50">
           <ul className="flex flex-col items-start space-y-2 p-4 font-semibold text-lg">
               <NavLink to="/" className="hover:text-orange-500"><li>Home</li></NavLink>
-              <NavLink to="/Cart" className="hover:text-orange-500"><li>Cart <span className='text-sm px-1 rounded-full bg-orange-400'>{cart?.length || 0}</span></li></NavLink>
+              <NavLink to="/Cart" className="hover:text-orange-500"><li>Cart <span className='text-sm px-1 rounded-full bg-orange-400'>{cart && cart.length || 0}</span></li></NavLink>
               <NavLink to="/Order" className="hover:text-orange-500"><li>Order</li></NavLink>
               <li className="w-full">
               <div className="flex items-center space-x-2">
@@ -90,9 +90,9 @@ function Navbar() {
             </li>
             <div className="flex items-center space-x-2">
                 <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="profile" className='w-8 h-8' />
-                {user ? (
+                {userName ? (
               <>
-                <span className="font-normal text-sm">{user.name}</span>
+                <span className="font-normal text-sm">{userName}</span>
                 <button
                   className='bg-orange-500 px-3 py-1 rounded-full hover:bg-orange-600 text-white'
                   onClick={handleLogout} // Trigger the logout function
