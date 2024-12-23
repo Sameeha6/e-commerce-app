@@ -3,7 +3,7 @@
     {
       "id": "1",
       "name": "iPhone 14",
-      "price": 52000,
+      "price": "53000",
       "image": "https://www.imagineonline.store/cdn/shop/files/iPhone_14_Pro_Deep_Purple_PDP_Image_Position-1a__WWEN.jpg?v=1692348972",
       "description": "6GB RAM + 128GB Storage | 6.1-inch Super Retina XDR Display | IP68 Water & Dust Resistance | A15 Bionic Chip | 12MP Dual Rear Cameras | 20-Hour Video Playback | Fast Charging Support"
     },
@@ -104,6 +104,13 @@
       "price": 32999,
       "image": "https://dakauf.eu/wp-content/uploads/2022/10/iPhoneSE_2022_midn.jpg",
       "description": "4GB RAM + 64GB Storage | 4.7-inch Retina HD Display | IP67 Water & Dust Resistance | A15 Bionic Chip | 12MP Rear Camera | 2227mAh Battery | 18W Fast Charging"
+    },
+    {
+      "id": "105d",
+      "name": "iPhone 15",
+      "price": "79900",
+      "description": "6GB RAM + 128GB Storage | 6.1-inch Super Retina XDR Display | IP68 Water & Dust Resistance | A16 Bionic Chip | 48MP Advanced Dual Rear Cameras | USB-C Charging Port | Dynamic Island | iOS 17 | All-day battery life",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmEySZbSt-fxNzPAawDIt436kLn73hTACcGQ&s"
     }
   ],
   "users": [
@@ -113,6 +120,7 @@
       "email": "john.doe@example.com",
       "password": "123456",
       "role": "admin",
+      "blocked": false,
       "cart": []
     },
     {
@@ -120,6 +128,8 @@
       "name": "sameeha",
       "email": "sameehasirajt@gmail.com",
       "password": "password123",
+      "role": "user",
+      "blocked": false,
       "cart": [
         {
           "id": "1",
@@ -136,6 +146,8 @@
       "name": "fathima",
       "email": "fathima@gmail.com",
       "password": "password456",
+      "role": "user",
+      "blocked": false,
       "cart": [
         {
           "id": "9",
@@ -152,6 +164,8 @@
       "name": "feliz",
       "email": "feliz@gmail.com",
       "password": "fezu",
+      "role": "user",
+      "blocked": false,
       "cart": [
         {
           "id": "3",
@@ -175,7 +189,18 @@
       "id": "c9cd",
       "name": "lamiya",
       "email": "lamiya@gmail.com",
-      "password": "lamiya"
+      "password": "lamiya",
+      "role": "user",
+      "blocked": false
+    },
+    {
+      "id": "b7f4",
+      "name": "example",
+      "email": "example@gmail.com",
+      "password": "0000",
+      "role": "user",
+      "blocked": false,
+      "cart": []
     }
   ],
   "cart": [
@@ -294,6 +319,30 @@
         "country": "india"
       },
       "date": "2024-12-22T05:38:30.237Z"
+    },
+    {
+      "id": "9337",
+      "userId": "b7f4",
+      "items": [
+        {
+          "id": "105d",
+          "name": "iPhone 15",
+          "price": "79900",
+          "description": "6GB RAM + 128GB Storage | 6.1-inch Super Retina XDR Display | IP68 Water & Dust Resistance | A16 Bionic Chip | 48MP Advanced Dual Rear Cameras | USB-C Charging Port | Dynamic Island | iOS 17 | All-day battery life",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmEySZbSt-fxNzPAawDIt436kLn73hTACcGQ&s",
+          "qty": 1
+        }
+      ],
+      "total": 79900,
+      "paymentMethod": "PayPal",
+      "address": {
+        "street": "house",
+        "city": "kozhikode",
+        "state": "kerala",
+        "zip": "673302",
+        "country": "india"
+      },
+      "date": "2024-12-23T17:24:38.736Z"
     }
   ]
 }

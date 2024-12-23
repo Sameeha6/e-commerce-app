@@ -19,6 +19,7 @@ export const UserProvider = ({ children }) => {
         setUser(newUser);
         localStorage.setItem("user",newUser.email);
         localStorage.setItem("userId",newUser.id);
+        localStorage.setItem("userName",newUser.name);
         navigate('/');
         return "";
       }
@@ -60,7 +61,7 @@ export const UserProvider = ({ children }) => {
   const handleLogout = () => {
     setUser([]);
     localStorage.clear();
-    // navigate("/login");
+    navigate("/login");
   };
 
 

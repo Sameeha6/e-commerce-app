@@ -54,9 +54,10 @@ const handleOutsideClick = (e) => {
         </div>
 
         {/* Desktop Logout Button */}
-        <div className="hidden md:flex">
+        <div className="hidden md:flex items-center">
+          <img src="https://cdn-icons-png.flaticon.com/512/11202/11202999.png" alt="icon" className="w-6 h-6" />
           <button
-            className="px-4 py-2 text-lg font-medium rounded-md hover:bg-gray-700 transition duration-300"
+            className="p-2 text-lg font-medium rounded-md hover:bg-gray-700 transition duration-300"
             onClick={handleLogout}
           >
             Log out
