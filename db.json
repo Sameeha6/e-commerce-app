@@ -199,7 +199,7 @@
       "email": "example@gmail.com",
       "password": "0000",
       "role": "user",
-      "blocked": false,
+      "blocked": true,
       "cart": []
     }
   ],

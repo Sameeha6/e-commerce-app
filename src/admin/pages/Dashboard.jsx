@@ -8,15 +8,17 @@ const Dashboard = () => {
   const [totalUsers, setTotalUsers] = useState(0);
   const [totalProducts, setTotalProducts] = useState(0);
   const [totalOrders, setTotalOrders] = useState(0);
+  const [totalRevenue, setTotalRevenue] = useState(0);
 
   useEffect(() => {
     getAllProduct().then((res) => setTotalProducts(res.data.length));
-    getAllOrders().then((res) => setTotalOrders(res.data.length));
+    getAllOrders().then((res) =>{ 
+      setTotalOrders(res.data.length)
+      const revenue = res.data.reduce((acc, order) => acc + order.totalAmount, 0);
+      setTotalRevenue(revenue);
+    });
     getAllUsers().then((res) => setTotalUsers(res.data.length));
     }, []);
-
-
-
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
@@ -25,23 +27,36 @@ const Dashboard = () => {
         <h1 className="text-2xl font-bold text-gray-800">Admin Dashboard</h1>
       </header>
 
-      <main className="flex-1 flex flex-col p-6">
+      <main className="flex-1 flex flex-col p-6 items-center">
         {/* Overview Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-          <div className="bg-white rounded-lg shadow-md p-6 text-center">
-            <h2 className="text-2xl font-semibold text-gray-600">Total Users</h2>
-            <p className="text-4xl font-bold text-gray-900 mt-4">{totalUsers}</p>
-            {/* <p className="text-sm text-gray-500 mt-2">+25 this week</p> */}
+        <div className="flex flex-col gap-6 mb-6 w-full max-w-2xl">
+          <div className="bg-white rounded-lg shadow-md p-8 text-center flex">
+            <img src="https://cdn-icons-png.flaticon.com/512/1144/1144709.png" alt="user" className="w-20 h-20" />
+            <div className="flex flex-col w-full">
+              <h2 className="text-2xl font-semibold text-gray-600">Total Users</h2>
+              <p className="text-4xl font-bold text-gray-900 mt-4">{totalUsers}</p>
+            </div>
           </div>
-          <div className="bg-white rounded-lg shadow-md p-6 text-center">
-            <h2 className="text-2xl font-semibold text-gray-600">Total Products</h2>
-            <p className="text-4xl font-bold text-gray-900 mt-4">{totalProducts}</p>
-            {/* <p className="text-sm text-gray-500 mt-2">+142 this week</p> */}
+          <div className="bg-white rounded-lg shadow-md p-8 text-center flex">
+            <img src="https://cdn-icons-png.flaticon.com/512/18532/18532334.png" alt="pdts" className="w-24 h-20"/>
+            <div className="flex flex-col w-full">
+              <h2 className="text-2xl font-semibold text-gray-600">Total Products</h2>
+              <p className="text-4xl font-bold text-gray-900 mt-4">{totalProducts}</p>
+            </div>
           </div>
-          <div className="bg-white rounded-lg shadow-md p-6 text-center">
-            <h2 className="text-2xl font-semibold text-gray-600">Total Orders</h2>
-            <p className="text-4xl font-bold text-gray-900 mt-4">{totalOrders}</p>
-            {/* <p className="text-sm text-gray-500 mt-2">+39 this week</p> */}
+          <div className="bg-white rounded-lg shadow-md p-8 text-center flex">
+            <img src="https://cdn-icons-png.flaticon.com/512/6054/6054065.png" alt="orders" className="w-20 h-20" />
+            <div className="flex flex-col w-full">
+              <h2 className="text-2xl font-semibold text-gray-600">Total Orders</h2>
+              <p className="text-4xl font-bold text-gray-900 mt-4">{totalOrders}</p>
+            </div>
+          </div>
+          <div className="bg-white rounded-lg shadow-md p-8 text-center flex">
+            <img src="	https://cdn-icons-png.flaticon.com/512/16316/16316708.png" alt="rev" className="w-20 h-20"/>
+            <div className="flex flex-col w-full">
+              <h2 className="text-2xl font-semibold text-gray-600">Total Revenue</h2>
+              <p className="text-4xl font-bold text-green-500 mt-4">₹{totalRevenue.toLocaleString()}</p>
+            </div>
           </div>
         </div>
       </main>
