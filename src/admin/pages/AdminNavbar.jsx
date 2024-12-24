@@ -93,21 +93,21 @@ const handleOutsideClick = (e) => {
                 Dashboard
             </Link>
             <Link
-                to="/admin/manage-products"
+                to="/admin/manageproducts"
                 className="block px-4 py-2 rounded-md hover:bg-gray-500 transition duration-300 font-medium"
                 onClick={() => setMenuOpen(false)}
             >
                 Manage Products
             </Link>
             <Link
-                to="/admin/manage-users"
+                to="/admin/manageusers"
                 className="block px-4 py-2 rounded-md hover:bg-gray-500 transition duration-300 font-medium"
                 onClick={() => setMenuOpen(false)}
             >
                 Manage Users
             </Link>
             <Link
-                to="/admin/manage-orders"
+                to="/admin/manageorders"
                 className="block px-4 py-2 rounded-md hover:bg-gray-500 transition duration-300 font-medium"
                 onClick={() => setMenuOpen(false)}
             >

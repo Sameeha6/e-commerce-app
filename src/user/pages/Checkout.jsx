@@ -1,17 +1,16 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../../contexts/CartContext";
-// import { useUser } from "../../contexts/UserContext";
 import { addOrder } from "../../api/userApi";
 
 const Checkout = () => {
-  const { cart , clearCart, totalPrice } = useCart();
-//   const { user } = useUser()
+  const { cart , clearCart, totalPrice } = useCart()
   const getTotalPrice = () =>  cart.reduce((total, item) => total + item.price * item.qty, 0);
   const navigate = useNavigate();
   const [selectedPayment, setSelectedPayment] = useState("");
-  const [address, setAddress] = useState({ street: "", city: "", state: "", zip: "", country: "" });
+  const [address, setAddress] = useState({ Name: "", Address: "", Number: "" });
   const userId = localStorage.getItem("userId");
+  const userName = localStorage.getItem("userName");
  
 
 
@@ -21,7 +20,7 @@ const Checkout = () => {
       alert("Please select a payment method to proceed.");
       return;
     }
-    if (!address.street || !address.city || !address.state || !address.zip || !address.country) { 
+    if (!address.Name || !address.Address || !address.Number) { 
         alert("Please fill out all address fields."); 
         return; 
     }
@@ -29,43 +28,23 @@ const Checkout = () => {
         alert("Please add items to cart to checkout.")
         return;
       } 
-  
-    // const orderDetails = {
-    //   email, // Get from UserContext
-    //   items: cart.map((item) => ({
-    //     id: item.id,
-    //     name: item.name,
-    //     quantity: item.quantity,
-    //     price: item.price,
-    //   })),
-    //   total: getTotalPrice(),
-    //   paymentMethod: selectedPayment,
-    //   address: address,
-    //   date: new Date().toISOString(),
-    // };
 
     try {
-    //   const response = await fetch("http://localhost:5001/orders", {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify(orderDetails),
-    //   });
 
     const orderDetials = {
         userId,
+        userName,
         items: cart,
         total: totalPrice,
         paymentMethod: selectedPayment,
-        address: address,
+        address,
         date: new Date().toISOString(),
       };
       const response = await addOrder(orderDetials);
       if (response) {
         alert(`Order placed successfully with ${selectedPayment}!`);
         clearCart(); // Clear the cart after placing the order
-        navigate("/orders");
+        navigate("/Order");
       } else {
         alert("Failed to place the order. Please try again.");
       }
@@ -124,68 +103,35 @@ const Checkout = () => {
           <div className="mt-4"> 
             <h3 className="text-lg font-semibold mb-2">Shipping Address:</h3> 
             <div className="space-y-2"> 
-                <input type="text" name="street" placeholder="Street Address" value={address.street} 
+                <input type="text" name="Name" placeholder="Enter your name" value={address.Name} 
                     onChange={handleAddressChange} className="w-full border p-2 rounded" required /> 
-                <input type="text" name="city" placeholder="City" value={address.city} 
+                <textarea name="Address" placeholder="Enter your address" value={address.Address} 
                     onChange={handleAddressChange} className="w-full border p-2 rounded" required /> 
-                <input type="text" name="state" placeholder="State" value={address.state} 
-                    onChange={handleAddressChange} className="w-full border p-2 rounded" required /> 
-                <input type="text" name="zip" placeholder="ZIP Code" value={address.zip} 
-                    onChange={handleAddressChange} className="w-full border p-2 rounded" required /> 
-                <input type="text" name="country" placeholder="Country" value={address.country} 
+                <input type="tel" name="Number" placeholder="Enter your mobile number" value={address.Number} 
                     onChange={handleAddressChange} className="w-full border p-2 rounded" required /> 
             </div> 
             </div>
 
           {/* Payment Methods Section */}
-          <div className="mt-4">
-            <h3 className="text-base font-semibold mb-2">Select Payment Method:</h3>
-            <div className="space-y-2">
-              <label className="flex items-center space-x-2">
-                <input
-                  type="radio"
-                  value="Credit Card"
-                  checked={selectedPayment === "Credit Card"}
-                  onChange={(e) => setSelectedPayment(e.target.value)}
-                  className="w-4 h-4"
-                />
-                <span>Credit Card</span>
-              </label>
-
-              <label className="flex items-center space-x-2">
-                <input
-                  type="radio"
-                  value="Debit Card"
-                  checked={selectedPayment === "Debit Card"}
-                  onChange={(e) => setSelectedPayment(e.target.value)}
-                  className="w-4 h-4"
-                />
-                <span>Debit Card</span>
-              </label>
-
-              <label className="flex items-center space-x-2">
-                <input
-                  type="radio"
-                  value="PayPal"
-                  checked={selectedPayment === "PayPal"}
-                  onChange={(e) => setSelectedPayment(e.target.value)}
-                  className="w-4 h-4"
-                />
-                <span>PayPal</span>
-              </label>
-
-              <label className="flex items-center space-x-2">
-                <input
-                  type="radio"
-                  value="Cash on Delivery"
-                  checked={selectedPayment === "Cash on Delivery"}
-                  onChange={(e) => setSelectedPayment(e.target.value)}
-                  className="w-4 h-4"
-                />
-                <span>Cash on Delivery</span>
-              </label>
+          <div className="mb-6">
+            <h3 className="text-xl font-semibold text-gray-700 mb-3">Payment Method</h3>
+            <div className="flex flex-col space-y-3">
+              {["Credit Card", "Debit Card", "Google Pay", "Cash on Delivery"].map((method) => (
+                <label key={method} className="flex items-center space-x-3">
+                  <input
+                    type="radio"
+                    name="payment"
+                    value={method}
+                    checked={selectedPayment === method}
+                    onChange={(e) => setSelectedPayment(e.target.value)}
+                    className="w-5 h-5"
+                  />
+                  <span>{method}</span>
+                </label>
+              ))}
             </div>
           </div>
+
 
           {/* Confirm Order Button */}
           <div className="mt-6 flex justify-between items-center">
@@ -204,7 +150,7 @@ const Checkout = () => {
           </div>
         </>
       ) : (
-        <p>Your cart is empty. Add some items to checkout.</p>
+        <p>Your cart is empty. Add items to checkout.</p>
       )}
     </div>
   );

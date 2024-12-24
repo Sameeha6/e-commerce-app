@@ -129,17 +129,8 @@
       "email": "sameehasirajt@gmail.com",
       "password": "password123",
       "role": "user",
-      "blocked": false,
-      "cart": [
-        {
-          "id": "1",
-          "name": "iPhone 14",
-          "price": 52000,
-          "image": "https://www.imagineonline.store/cdn/shop/files/iPhone_14_Pro_Deep_Purple_PDP_Image_Position-1a__WWEN.jpg?v=1692348972",
-          "description": "6GB RAM + 128GB Storage | 6.1-inch Super Retina XDR Display | IP68 Water & Dust Resistance | A15 Bionic Chip | 12MP Dual Rear Cameras | 20-Hour Video Playback | Fast Charging Support",
-          "qty": 2
-        }
-      ]
+      "blocked": true,
+      "cart": []
     },
     {
       "id": "8be7",
@@ -166,24 +157,7 @@
       "password": "fezu",
       "role": "user",
       "blocked": false,
-      "cart": [
-        {
-          "id": "3",
-          "name": "Google Pixel 8",
-          "price": 64999,
-          "image": "https://virtual2web.com/12161-superlarge_default/google-pixel-8-pro-5g-12gb-128gb-blanco-porcelain-dual-sim-ga04798.jpg",
-          "description": "8GB RAM + 128GB Storage | 6.2-inch OLED Display | IP68 Water & Dust Resistance | Google Tensor G3 Chip | 50MP Dual Rear Cameras | 4000mAh Battery | 30W Fast Charging",
-          "qty": 1
-        },
-        {
-          "id": "7",
-          "name": "Realme GT 2 Pro",
-          "price": 47999,
-          "image": "https://images.jdmagicbox.com/quickquotes/images_main/gt-2-pro-ram-12-gb-256-gb-paper-green-271165723-mgz93q4t.png",
-          "description": "12GB RAM + 256GB Storage | 6.7-inch AMOLED Display | IP68 Water & Dust Resistance | Snapdragon 8 Gen 1 | 50MP Triple Rear Cameras | 5000mAh Battery | 65W Fast Charging",
-          "qty": 1
-        }
-      ]
+      "cart": []
     },
     {
       "id": "c9cd",
@@ -225,33 +199,18 @@
   ],
   "orders": [
     {
-      "id": "7698",
-      "userId": "1",
+      "id": "6809",
+      "userId": "2dbd",
+      "userName": "sameeha",
       "items": [
         {
-          "id": "11",
-          "name": "Nokia G50",
-          "price": 18999,
-          "image": "https://28mobile.com/cdn/shop/products/NokiaG50TA-13616_128GbBlue_grande@2x.jpg?v=1667547713",
-          "description": "4GB RAM + 64GB Storage | 6.82-inch HD+ Display | IP52 Water & Dust Resistance | Snapdragon 480 5G | 48MP Triple Rear Cameras | 5000mAh Battery | 18W Fast Charging",
-          "qty": 1
-        }
-      ],
-      "total": 18999,
-      "paymentMethod": "Cash on Delivery",
-      "address": {
-        "street": "house",
-        "city": "kozhikode",
-        "state": "kerala",
-        "zip": "673302",
-        "country": "india"
-      },
-      "date": "2024-12-21T18:09:41.806Z"
-    },
-    {
-      "id": "0030",
-      "userId": "1",
-      "items": [
+          "id": "1",
+          "name": "iPhone 14",
+          "price": 52000,
+          "image": "https://www.imagineonline.store/cdn/shop/files/iPhone_14_Pro_Deep_Purple_PDP_Image_Position-1a__WWEN.jpg?v=1692348972",
+          "description": "6GB RAM + 128GB Storage | 6.1-inch Super Retina XDR Display | IP68 Water & Dust Resistance | A15 Bionic Chip | 12MP Dual Rear Cameras | 20-Hour Video Playback | Fast Charging Support",
+          "qty": 2
+        },
         {
           "id": "2",
           "name": "Samsung Galaxy S23",
@@ -261,88 +220,14 @@
           "qty": 1
         }
       ],
-      "total": 79999,
-      "paymentMethod": "PayPal",
+      "total": 183999,
+      "paymentMethod": "Cash on Delivery",
       "address": {
-        "street": "house",
-        "city": "kozhikode",
-        "state": "kerala",
-        "zip": "673302",
-        "country": "india"
+        "Name": "sameeha",
+        "Address": "kadalundi , kozhikode",
+        "Number": "1234567890"
       },
-      "date": "2024-12-21T18:11:22.740Z"
-    },
-    {
-      "id": "eda2",
-      "userId": "5088",
-      "items": [
-        {
-          "id": "13",
-          "name": "Huawei P50 Pro",
-          "price": 89999,
-          "image": "https://media.wisemarket.ae/variant/inventory_30097.webp",
-          "description": "8GB RAM + 256GB Storage | 6.6-inch OLED Display | IP68 Water & Dust Resistance | Kirin 9000 5G | 50MP Quad Rear Cameras | 4360mAh Battery | 50W Wireless Charging",
-          "qty": 1
-        }
-      ],
-      "total": 89999,
-      "paymentMethod": "Credit Card",
-      "address": {
-        "street": "house",
-        "city": "kozhikode",
-        "state": "kerala",
-        "zip": "673302",
-        "country": "india"
-      },
-      "date": "2024-12-21T18:28:59.557Z"
-    },
-    {
-      "id": "033f",
-      "userId": "5088",
-      "items": [
-        {
-          "id": "14",
-          "name": "LG Velvet",
-          "price": 24999,
-          "image": "https://upload.wikimedia.org/wikipedia/commons/d/d4/LG_Velvet_Aurora_Green_version.jpg",
-          "description": "6GB RAM + 128GB Storage | 6.8-inch OLED Display | IP68 Water & Dust Resistance | Snapdragon 765G | 48MP Triple Rear Cameras | 4300mAh Battery | 18W Fast Charging",
-          "qty": 1
-        }
-      ],
-      "total": 24999,
-      "paymentMethod": "Debit Card",
-      "address": {
-        "street": "house",
-        "city": "kozhikode",
-        "state": "kerala",
-        "zip": "673302",
-        "country": "india"
-      },
-      "date": "2024-12-22T05:38:30.237Z"
-    },
-    {
-      "id": "9337",
-      "userId": "b7f4",
-      "items": [
-        {
-          "id": "105d",
-          "name": "iPhone 15",
-          "price": "79900",
-          "description": "6GB RAM + 128GB Storage | 6.1-inch Super Retina XDR Display | IP68 Water & Dust Resistance | A16 Bionic Chip | 48MP Advanced Dual Rear Cameras | USB-C Charging Port | Dynamic Island | iOS 17 | All-day battery life",
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmEySZbSt-fxNzPAawDIt436kLn73hTACcGQ&s",
-          "qty": 1
-        }
-      ],
-      "total": 79900,
-      "paymentMethod": "PayPal",
-      "address": {
-        "street": "house",
-        "city": "kozhikode",
-        "state": "kerala",
-        "zip": "673302",
-        "country": "india"
-      },
-      "date": "2024-12-23T17:24:38.736Z"
+      "date": "2024-12-24T09:08:52.237Z"
     }
   ]
 }

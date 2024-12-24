@@ -60,9 +60,9 @@ const ManageProducts = () => {
                                 </td>                                
                                 <td className="px-6 py-3">
                                 <NavLink to={`/admin/editproduct/${product.id}`}>
-                                        <button className=" text-blue-500 font-semibold py-1 px-3 rounded transition duration-200 mr-2">Edit</button>
+                                        <button className=" text-blue-500 font-semibold p-2 rounded transition duration-200">Edit</button>
                                     </NavLink>
-                                    <button  onClick={() => handleDeleteProduct(product.id)}className="text-red-500 font-semibold py-1 px-3 rounded transition duration-200">Delete</button>
+                                    <button  onClick={() => handleDeleteProduct(product.id)}className="text-red-500 font-semibold p-2 rounded transition duration-200">Delete</button>
                                 </td>
                             </tr>
                         ))}

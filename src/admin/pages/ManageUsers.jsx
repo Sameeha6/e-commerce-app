@@ -50,8 +50,8 @@ const ManageUsers = () => {
                                     onClick={() => handleonClick(user.id, user.blocked)}
                                     className={`py-1 px-3 font-semibold rounded-md transition- ${
                                         user.blocked
-                                          ? "bg-red-600 hover:bg-red-700 text-white"
-                                          : "bg-green-600 hover:bg-green-700 text-white"
+                                          ? "text-red-600 hover:text-red-700 "
+                                          : "text-blue-700 hover:text-blue-800"
                                       }`}
                                 >
                                     {user.blocked ? "Unblock" : "Block"}

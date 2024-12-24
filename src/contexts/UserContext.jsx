@@ -51,7 +51,7 @@ export const UserProvider = ({ children }) => {
             return "";
           }
         }else{
-        return "Invalid email or password"
+        return "You are blocked.Contact admin"
         }
       }else{
       return "Invalid email or password"
