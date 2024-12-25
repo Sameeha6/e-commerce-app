@@ -61,14 +61,14 @@ const Checkout = () => {
     }
 
   return (
-    <div className="max-w-4xl mx-auto py-4 px-2">
-      <h2 className="text-lg font-bold mb-2">Checkout Page</h2>
+    <div className="max-w-4xl mx-auto py-4 px-2  ">
+      <h2 className="text-xl font-bold mb-6 border-b text-center">Checkout Page</h2>
 
       {cart.length > 0 ? (
         <>
           {/* Cart Summary Section */}
           <div className="mb-4">
-            <h3 className="text-lg font-semibold mb-2">Cart Summary:</h3>
+            <h3 className="text-lg font-bold mb-2">Cart Summary:</h3>
             <div className="border p-2 rounded">
               {cart.map((product) => (
                 <div
@@ -82,11 +82,11 @@ const Checkout = () => {
                       className="w-16 h-16 object-cover"
                     />
                     <div>
-                      <h4 className="font-semibold">{product.name}</h4>
-                      <p>₹{product.price} x {product.qty}</p>
+                      <h4 className="font-bold">{product.name}</h4>
+                      <p className="text-gray-600">₹{product.price} x {product.qty}</p>
                     </div>
                   </div>
-                  <div className="text-lg font-semibold">
+                  <div className="text-base font-semibold text-black">
                     ₹{product.price * product.qty}
                   </div>
                 </div>
@@ -95,13 +95,13 @@ const Checkout = () => {
           </div>
 
           {/* Total Amount Section */}
-          <div className="mt-4 text-lg font-semibold">
-            <p className="mb-2">Total Amount: ₹{getTotalPrice()}</p>
+          <div className="mt-2 text-base font-bold">
+            <p className="mb-6 text-black">Total Amount: <span className="text-gray-600">₹{getTotalPrice()}</span></p>
           </div>
 
           {/* Address Input Section */} 
-          <div className="mt-4"> 
-            <h3 className="text-lg font-semibold mb-2">Shipping Address:</h3> 
+          <div className="mt-4 mb-6"> 
+            <h3 className="text-lg font-bold mb-2">Shipping Address:</h3> 
             <div className="space-y-2"> 
                 <input type="text" name="Name" placeholder="Enter your name" value={address.Name} 
                     onChange={handleAddressChange} className="w-full border p-2 rounded" required /> 
@@ -114,17 +114,17 @@ const Checkout = () => {
 
           {/* Payment Methods Section */}
           <div className="mb-6">
-            <h3 className="text-xl font-semibold text-gray-700 mb-3">Payment Method</h3>
-            <div className="flex flex-col space-y-3">
+            <h3 className="text-lg font-bold mb-3">Payment Method</h3>
+            <div className="flex flex-col space-y-2 text-gray-600">
               {["Credit Card", "Debit Card", "Google Pay", "Cash on Delivery"].map((method) => (
-                <label key={method} className="flex items-center space-x-3">
+                <label key={method} className="flex items-center space-x-2">
                   <input
                     type="radio"
                     name="payment"
                     value={method}
                     checked={selectedPayment === method}
                     onChange={(e) => setSelectedPayment(e.target.value)}
-                    className="w-5 h-5"
+                    className="w-4 h-4"
                   />
                   <span>{method}</span>
                 </label>

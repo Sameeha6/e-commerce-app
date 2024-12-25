@@ -30,7 +30,7 @@ const ManageProducts = () => {
                 <h1 className="text-2xl font-bold text-gray-800">Manage Products</h1>
             </header>
             <div className= " mb-8 px-6">
-                <NavLink to={'/admin/addproduct'}> <button className="mt-4 sm:mt-6 bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-4 rounded-lg shadow-sm transition-all duration-200">Add Product</button></NavLink>
+                <NavLink to={'/admin/addproduct'}> <button className="mt-4 sm:mt-6 border-2 border-orange-500 text-gray-800 font-semibold py-2 px-4 rounded-lg shadow-sm transition-all duration-200">Add Product</button></NavLink>
             </div>
 
             {/* Product Table */}

@@ -1,15 +1,13 @@
 import React from "react";
 import { useCart } from "../../contexts/CartContext";
 import { useNavigate,Link } from "react-router-dom"; 
-import { useUser } from "../../contexts/UserContext";
 
 const Cart = () => {
   const { cart, removeFromCart, clearCart, updateQuantity,totalPrice } = useCart();
   const navigate = useNavigate();
   const userId = localStorage.getItem("userId")
 
-//   const getTotalPrice = () =>
-//     cart.reduce((total, item) => total + item.price * item.quantity, 0);
+
 
   const handleCheckout = () => {
     if(cart.length === 0){
@@ -28,7 +26,7 @@ const Cart = () => {
           {cart.map((product) => (
             <div
               key={product.id}
-              className="flex items-center justify-between border-b py-2"
+              className="flex items-center justify-between border-b py-1"
             >
               <div className="flex items-center">
                 <img
@@ -37,8 +35,8 @@ const Cart = () => {
                   className="w-20 h-20 object-contain mr-4"
                 />
                 <div>
-                  <h3 className="font-semibold">{product.name}</h3>
-                  <p>₹{product.price}</p>
+                  <h3 className="font-bold">{product.name}</h3>
+                  <p className="text-gray-600 font-semibold">₹{product.price}</p>
                 </div>
               </div>
 
@@ -61,24 +59,24 @@ const Cart = () => {
 
               <button
                 onClick={() => removeFromCart(product.id)}
-                className="bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-600"
+                className=" text-red-600 font-semibold text-base border-2 px-2 py-1 hover:text-red-700"
               >
                 Remove
               </button>
             </div>
           ))}
           <div className="mt-2 flex justify-between items-center">
-            <h3 className="text-lg font-bold">Total: ₹{totalPrice}</h3>
+            <h3 className="text-base font-bold">Total : <span className="text-gray-600">₹{totalPrice}</span></h3>
             <div className="space-x-4">
               <button
                 onClick={clearCart}
-                className="bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600"
+                className="text-green-600 font-semibold text-base border-2 px-2 py-1 hover:text-green-700"
               >
                 Clear Cart
               </button>
               <button
                 onClick={handleCheckout}
-                className="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600"
+                className="text-blue-600 font-semibold text-base border-2 px-2 py-1 hover:text-blue-700"
               >
                 Checkout
               </button>

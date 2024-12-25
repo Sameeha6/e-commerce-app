@@ -7,7 +7,7 @@ export const EditProduct = () => {
 
     const { id } = useParams();
     const [product, setProduct] = useState({});
-    const [error, setError] = useState("");
+    const [error] = useState("");
     const navigate = useNavigate();
 
     useEffect(() => {

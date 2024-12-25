@@ -88,7 +88,7 @@ const ManageOrders = () => {
                                     <div className="flex justify-between items-center mt-6 pt-4 border-t">
                                         <button
                                             onClick={() => setExpandedOrder(isExpanded ? null : order.id)}
-                                            className="flex items-center space-x-2 px-4 py-2 text-sm font-medium text-gray-900 hover:text-gray-950 focus:outline-none focus:ring-2 focus:ring-orange-200 rounded-md"
+                                            className="flex items-center space-x-2 px-4 py-2 text-sm font-medium text-gray-900 hover:text-gray-950  ring-2 ring-orange-200 rounded-md"
                                         >
                                             {isExpanded ? 'Hide Details' : 'View Details'}
                                         </button>
@@ -101,7 +101,7 @@ const ManageOrders = () => {
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                             {/* Order Items */}
                                             <div >
-                                                <h3 className="text-lg font-medium text-black mb-4">Order Items</h3>
+                                                <h3 className="text-lg font-bold text-black mb-4">Order Items</h3>
                                                 <div className="space-y-3">
                                                     {order.items.map((item, index) => (
                                                         <div
@@ -116,7 +116,7 @@ const ManageOrders = () => {
                                                                 />
                                                             </div>
                                                             <div className="flex-1 min-w-0">
-                                                                <p className="font-medium text-gray-800">{item.name}</p>
+                                                                <p className="font-bold text-gray-800">{item.name}</p>
                                                                 <p className="text-sm text-gray-500">
                                                                     Quantity: {item.qty} × ₹{item.price}
                                                                 </p>
@@ -132,7 +132,7 @@ const ManageOrders = () => {
                                             <div className="space-y-6">        
                                                 {/* Address Details */}
                                                 <div>
-                                                    <h3 className="text-lg font-medium text-black mb-2">Shipping Address</h3>
+                                                    <h3 className="text-lg font-bold text-black mb-2">Shipping Address</h3>
                                                     <div className="bg-white p-2  border-b">
                                                         <p className="font-normal text-gray-600">{order.address?.Address}</p>
                                                     </div>
@@ -140,7 +140,7 @@ const ManageOrders = () => {
 
                                                 {/* Payment Info */}
                                                 <div>
-                                                    <h3 className="text-lg font-medium text-black mb-2">Payment Details</h3>
+                                                    <h3 className="text-lg font-bold text-black mb-2">Payment Details</h3>
                                                     <div className="bg-white p-2  border-b">
                                                         <p className="text-gray-600">Payment Method: {order.paymentMethod}</p>
                                                         <p className="font-normal text-gray-800 mt-2">Total Paid: ${order.total}</p>

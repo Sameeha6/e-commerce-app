@@ -129,7 +129,7 @@
       "email": "sameehasirajt@gmail.com",
       "password": "password123",
       "role": "user",
-      "blocked": true,
+      "blocked": false,
       "cart": []
     },
     {
@@ -139,16 +139,7 @@
       "password": "password456",
       "role": "user",
       "blocked": false,
-      "cart": [
-        {
-          "id": "9",
-          "name": "Sony Xperia 1 IV",
-          "price": 129999,
-          "image": "https://28mobile.com/cdn/shop/products/BLACK_8@2x.jpg?v=1665817259",
-          "description": "12GB RAM + 256GB Storage | 6.5-inch 4K OLED Display | IP68 Water & Dust Resistance | Snapdragon 8 Gen 1 | 12MP Triple Rear Cameras | 5000mAh Battery | 30W Fast Charging",
-          "qty": 1
-        }
-      ]
+      "cart": []
     },
     {
       "id": "5088",
@@ -228,6 +219,37 @@
         "Number": "1234567890"
       },
       "date": "2024-12-24T09:08:52.237Z"
+    },
+    {
+      "id": "ca17",
+      "userId": "8be7",
+      "userName": "fathima",
+      "items": [
+        {
+          "id": "9",
+          "name": "Sony Xperia 1 IV",
+          "price": 129999,
+          "image": "https://28mobile.com/cdn/shop/products/BLACK_8@2x.jpg?v=1665817259",
+          "description": "12GB RAM + 256GB Storage | 6.5-inch 4K OLED Display | IP68 Water & Dust Resistance | Snapdragon 8 Gen 1 | 12MP Triple Rear Cameras | 5000mAh Battery | 30W Fast Charging",
+          "qty": 1
+        },
+        {
+          "id": "12",
+          "name": "Asus Zenfone 9",
+          "price": 49999,
+          "image": "https://dlcdnwebimgs.asus.com/gain/9c259f4b-2e42-4716-a468-736c291368ce/",
+          "description": "8GB RAM + 128GB Storage | 5.9-inch AMOLED Display | IP68 Water & Dust Resistance | Snapdragon 8+ Gen 1 | 50MP Dual Rear Cameras | 4300mAh Battery | 30W Fast Charging",
+          "qty": 1
+        }
+      ],
+      "total": 179998,
+      "paymentMethod": "Google Pay",
+      "address": {
+        "Name": "Fathima",
+        "Address": "Malappuram ,Kerala",
+        "Number": "9876435123"
+      },
+      "date": "2024-12-25T06:44:30.995Z"
     }
   ]
 }
