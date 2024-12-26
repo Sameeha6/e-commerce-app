@@ -48,6 +48,11 @@ function Navbar() {
       setSearchTerm("");
       navigate(`/product/${productId}`)
     }
+    const handleOutsideClick = (e) => {
+      if (e.target.id === 'menu-overlay') {
+        setIsMenuOpen(false);
+      }
+    }
 
   return (
 
@@ -112,6 +117,11 @@ function Navbar() {
       </div>
 
       {isMenuOpen && (
+        <div
+        id="menu-overlay"
+        className="fixed inset-0 z-40 top-[71px]"
+        onClick={handleOutsideClick}
+        >
         <div className="absolute top-[70px] left-0 w-full bg-gray-900 shadow-md md:hidden z-40 flex flex-col items-center">
           <ul className="flex flex-col items-center space-y-2 p-4 font-semibold text-lg ">
               <NavLink to="/" className="hover:bg-gray-500 rounded-md py-2 px-4  "><li>Home</li></NavLink>
@@ -153,6 +163,7 @@ function Navbar() {
             )}
         </div>
         </ul>
+        </div>
         </div>
       )}
             
