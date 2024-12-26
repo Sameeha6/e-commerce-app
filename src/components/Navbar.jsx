@@ -63,9 +63,9 @@ function Navbar() {
                 <NavLink to="/Order" className="hover:text-orange-500"><li>Order</li></NavLink>
             </ul>
         </div>
-        <div className=' relative items-center space-x-4  md:block'>
+        <div className=' relative items-center space-x-4 hidden md:block'>
             <input onChange={(e)=>setSearchTerm(e.target.value)} value={searchTerm} type="search" placeholder='Search here...' 
-                className=' p-2 border rounded-md w-[300px] sm:w-[300px] md:w-[400px] lg:w-[500px] outline-none text-black' />
+                className=' p-2 border rounded-md w-[200px] sm:w-[200px] md:w-[300px] lg:w-[400px] outline-none text-black' />
             {showModal && products.length>0 && (
               <div className='absolute top-7 right-0 mt-3 overflow-y-auto z-50 w-full max-h-60 bg-white rounded-lg border-b-2 text-black text-sm'>
                 <ul className='divide-y divide-gray-300'>
@@ -106,7 +106,7 @@ function Navbar() {
           <img
             src="https://cdn-icons-png.flaticon.com/512/15178/15178747.png"
             alt="menu-icon"
-            className="w-7 h-7"
+            className="w-4 h-4"
           />
         </button>
       </div>
@@ -117,7 +117,19 @@ function Navbar() {
               <NavLink to="/" className="hover:bg-gray-500 rounded-md py-1 px-3  "><li>Home</li></NavLink>
               <NavLink to="/Cart" className=" hover:bg-gray-500 rounded-md py-1 px-3"><li>Cart {cart.length >0 && (<span className='text-sm px-1 rounded-full bg-orange-400'>{cart.length}</span>)}</li></NavLink>
               <NavLink to="/Order" className="hover:bg-gray-500 rounded-md py-1 px-3"><li>Order</li></NavLink>
-              
+              <div className=' relative items-center space-x-4 hidden md:block'>
+            <input onChange={(e)=>setSearchTerm(e.target.value)} value={searchTerm} type="search" placeholder='Search here...' 
+                className=' p-2 border rounded-md w-[200px] sm:w-[200px] md:w-[300px] lg:w-[400px] outline-none text-black' />
+            {showModal && products.length>0 && (
+              <div className='absolute top-7 right-0 mt-3 overflow-y-auto z-50 w-full max-h-60 bg-white rounded-lg border-b-2 text-black text-sm'>
+                <ul className='divide-y divide-gray-300'>
+                  {products.map(product=>(
+                    <li key={product.id} onClick={()=>handleProductClick(product.id)} className='cursor-pointer p-2'>{product.name}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+        </div>
             <div className="flex items-center space-x-2 space-y-2">
                 <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="profile" className='w-8 h-8' />
                 {userName ? (
