@@ -96,7 +96,7 @@ const Checkout = () => {
 
           {/* Total Amount Section */}
           <div className="mt-2 text-base font-bold">
-            <p className="mb-6 text-black">Total Amount: <span className="text-gray-600">₹{getTotalPrice()}</span></p>
+            <p className="mb-8 text-black">Total Amount: <span className="text-gray-600">₹{getTotalPrice()}</span></p>
           </div>
 
           {/* Address Input Section */} 
@@ -114,7 +114,7 @@ const Checkout = () => {
 
           {/* Payment Methods Section */}
           <div className="mb-6">
-            <h3 className="text-lg font-bold mb-3">Payment Method</h3>
+            <h3 className="text-lg font-bold mb-2 mt-5">Payment Method</h3>
             <div className="flex flex-col space-y-2 text-gray-600">
               {["Credit Card", "Debit Card", "Google Pay", "Cash on Delivery"].map((method) => (
                 <label key={method} className="flex items-center space-x-2">
@@ -137,7 +137,7 @@ const Checkout = () => {
           <div className="mt-6 flex justify-between items-center">
             <button
               onClick={handleOrderConfirmation}
-              className="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600"
+              className="bg-orange-400 text-white px-6 py-2 rounded hover:bg-orange-500"
             >
               Confirm Order
             </button>
