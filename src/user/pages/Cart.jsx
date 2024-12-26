@@ -35,8 +35,8 @@ const Cart = () => {
                   className="w-20 h-20 object-contain"
                 />
                 <div>
-                  <h3 className="font-bold">{product.name}</h3>
-                  <p className="text-gray-600 font-semibold">₹{product.price}</p>
+                  <h3 className="font-semibold">{product.name}</h3>
+                  <p className="text-gray-600 font-thin">₹{product.price}</p>
                 </div>
               </div>
 
@@ -66,7 +66,7 @@ const Cart = () => {
             </div>
           ))}
           <div className="mt-2 flex justify-between items-center">
-            <h3 className="text-base font-bold">Total : <span className="text-gray-600">₹{totalPrice}</span></h3>
+            <h3 className="text-base font-bold">Total : <span className="text-gray-600 font-semibold">₹{totalPrice}</span></h3>
             <div className="space-x-4">
               <button
                 onClick={clearCart}
