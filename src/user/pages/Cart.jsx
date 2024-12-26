@@ -32,7 +32,7 @@ const Cart = () => {
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="w-20 h-20 object-contain mr-4"
+                  className="w-20 h-20 object-contain"
                 />
                 <div>
                   <h3 className="font-bold">{product.name}</h3>
