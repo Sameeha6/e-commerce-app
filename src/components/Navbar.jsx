@@ -119,7 +119,7 @@ function Navbar() {
       {isMenuOpen && (
         <div
         id="menu-overlay"
-        className="fixed inset-0 z-40 top-[71px]"
+        className="fixed inset-0 z-40"
         onClick={handleOutsideClick}
         >
         <div className="absolute top-[70px] left-0 w-full bg-gray-900 shadow-md md:hidden z-50 flex flex-col items-center">

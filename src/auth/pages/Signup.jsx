@@ -57,7 +57,7 @@ const Signup = () => {
                     <p className="mr-32 mt-5 text-sm text-gray-400 font-serif ">Forget Password?</p>
                     <button type="submit"
                         className="bg-gradient-to-tr  mt-5 py-2 text-white
-                        px-16 rounded-full font-semibold bg-orange-600 hover:bg-orange-700 ml-[50px]"
+                        px-16 rounded-full font-semibold bg-orange-500 hover:bg-orange-600 ml-[50px]"
                     >
                         SignUp
                     </button>
