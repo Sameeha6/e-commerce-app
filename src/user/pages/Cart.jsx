@@ -36,7 +36,7 @@ const Cart = () => {
                 />
                 <div>
                   <h3 className="font-semibold">{product.name}</h3>
-                  <p className="text-gray-600 font-thin">₹{product.price}</p>
+                  <p className="text-gray-600 font-normal">₹{product.price}</p>
                 </div>
               </div>
 
@@ -59,24 +59,24 @@ const Cart = () => {
 
               <button
                 onClick={() => removeFromCart(product.id)}
-                className=" text-red-600 font-semibold text-base border-2 px-2 py-1 hover:text-red-700"
+                className=" text-red-600 font-medium text-base border-2 px-2 py-1 hover:text-red-700"
               >
                 Remove
               </button>
             </div>
           ))}
-          <div className="mt-2 flex justify-between items-center">
+          <div className="mt-3 flex justify-between items-center">
             <h3 className="text-base font-bold">Total : <span className="text-gray-600 font-semibold">₹{totalPrice}</span></h3>
             <div className="space-x-4">
               <button
                 onClick={clearCart}
-                className="text-green-600 font-semibold text-base border-2 px-2 py-1 hover:text-green-700"
+                className="text-green-600 font-medium text-base border-2 px-2 py-1 hover:text-green-700"
               >
                 Clear Cart
               </button>
               <button
                 onClick={handleCheckout}
-                className="text-blue-600 font-semibold text-base border-2 px-2 py-1 hover:text-blue-700"
+                className="text-blue-600 font-medium text-base border-2 px-2 py-1 hover:text-blue-700"
               >
                 Checkout
               </button>
