@@ -114,7 +114,7 @@ const Checkout = () => {
 
           {/* Payment Methods Section */}
           <div className="mb-6">
-            <h3 className="text-lg font-bold mb-2 mt-5">Payment Method</h3>
+            <h3 className="text-lg font-bold mb-2 mt-8">Payment Method</h3>
             <div className="flex flex-col space-y-2 text-gray-600">
               {["Credit Card", "Debit Card", "Google Pay", "Cash on Delivery"].map((method) => (
                 <label key={method} className="flex items-center space-x-2">

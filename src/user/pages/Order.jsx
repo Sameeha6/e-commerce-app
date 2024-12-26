@@ -25,32 +25,14 @@ const Orders = () => {
       {/* <h2 className="text-2xl font-bold">Your Orders</h2> */}
       {orders.length > 0 ? (
         orders.map((order) => (
-      //     <div key={order.id} className="border p-4 mb-4 rounded shadow">
-      //       <p><strong>Order ID:</strong> {order.id}</p>
-      //       {order.items.map((item, index) => (
-      //           <li key={index} className="list-none">
-      //             <div>
-      //               <strong>Item:</strong> {item.name}
-      //             </div>
-      //             <div>
-      //               <strong>Quantity:</strong> {item.quantity}
-      //             </div>
-      //           </li>
-      //         ))}
-      //       <p><strong>Total:</strong> ₹{order.total}</p>
-      //       <p><strong>Payment Method:</strong> {order.paymentMethod}</p>
-      //       <p><strong>Date:</strong> {new Date(order.date).toLocaleString()}</p>
-      //     </div>
-      //   ))
-      // ) : (
-      //   <p>No orders found.</p>
-      // )}
+      
       <div key={order.id} className="border p-4 mb-4 rounded shadow">
               <p><strong>Order ID:</strong> {order.id}</p>
               <p><strong>Total:</strong> ₹{order.total}</p>
               <p><strong>Payment Method:</strong> {order.paymentMethod}</p>
               <p><strong>Date:</strong> {new Date(order.date).toLocaleString()}</p>
               <h3 className="font-bold mt-4">Items:</h3>
+            <div className="overflow-auto">
             <table className="table-auto w-full text-left ">
               <thead>
                 <tr className="">
@@ -86,6 +68,7 @@ const Orders = () => {
                 )}
               </tbody>
             </table>
+            </div>
             </div>
           ))
       ) : (
