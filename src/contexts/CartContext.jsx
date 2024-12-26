@@ -56,6 +56,7 @@ const updateServerCart = async (cartData) => {
 
 
 const addToCart = async (product , qty = 1) => {
+    if(!userId) return alert("Please login to add items to cart");
     const existingitem = cart.find(item => item.id === product.id);
     let cartData;
     if(existingitem){
@@ -63,6 +64,8 @@ const addToCart = async (product , qty = 1) => {
     }else{
         cartData = [...cart, {...product, qty}];
     }
+    console.log(cartData)
+    alert(`Added ${product.name} to the cart`)
     updateServerCart(cartData);
 }
 

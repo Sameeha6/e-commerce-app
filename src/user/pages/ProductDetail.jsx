@@ -65,7 +65,8 @@ const ProductDetails = () => {
             onClick={(e) =>{
               e.preventDefault()
               addToCart(product)
-              alert(`Added ${product.name} to the cart`)}}>
+              // alert(`Added ${product.name} to the cart`)
+              }}>
             Add to Cart
           </button>
         </div>

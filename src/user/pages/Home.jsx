@@ -61,7 +61,8 @@ const Home = () => {
                   onClick={(e) =>{
                     e.preventDefault()
                     addToCart(mobile)
-                    alert(`Added ${mobile.name} to the cart`)}}>
+                    // alert(`Added ${mobile.name} to the cart`)
+                    }}>
                     Add to Cart
                 </button>
                 </div>
