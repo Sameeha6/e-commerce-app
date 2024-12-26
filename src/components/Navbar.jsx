@@ -117,7 +117,7 @@ function Navbar() {
               <NavLink to="/" className="hover:bg-gray-500 rounded-md py-1 px-3  "><li>Home</li></NavLink>
               <NavLink to="/Cart" className=" hover:bg-gray-500 rounded-md py-1 px-3"><li>Cart {cart.length >0 && (<span className='text-sm px-1 rounded-full bg-orange-400'>{cart.length}</span>)}</li></NavLink>
               <NavLink to="/Order" className="hover:bg-gray-500 rounded-md py-1 px-3"><li>Order</li></NavLink>
-              <div className=' relative items-center space-x-4 hidden md:block'>
+              <div className=' relative items-center space-x-4  md:block'>
             <input onChange={(e)=>setSearchTerm(e.target.value)} value={searchTerm} type="search" placeholder='Search here...' 
                 className=' p-2 border rounded-md w-[200px] sm:w-[200px] md:w-[300px] lg:w-[400px] outline-none text-black' />
             {showModal && products.length>0 && (
