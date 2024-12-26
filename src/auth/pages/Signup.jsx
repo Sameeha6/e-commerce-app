@@ -18,19 +18,7 @@ const Signup = () => {
         const message = await handleSignup(form);
         if (message) alert(message);
     };
-    //     try {
-    //         const {data} = await axios.get("http://localhost:5000/users", {
-    //             params: {email:form.email}
-    //         })
-    //         if (data.length > 0) setMessage("User already exist")                
-    //         else {
-    //             await axios.post("http://localhost:5000/users",form);
-    //             navigate("/", { state: { name: form.email } });
-    //         }
-    //     } catch (error) {
-    //         setMessage("An error occurred")
-    //     }
-    // }
+    
 
 
     return(
@@ -69,7 +57,7 @@ const Signup = () => {
                     <p className="mr-32 mt-5 text-sm text-gray-400 font-serif ">Forget Password?</p>
                     <button type="submit"
                         className="bg-gradient-to-tr  mt-5 py-2 text-white
-                        px-16 rounded-full font-semibold bg-blue-600 hover:bg-blue-700 ml-[50px]"
+                        px-16 rounded-full font-semibold bg-orange-600 hover:bg-orange-700 ml-[50px]"
                     >
                         SignUp
                     </button>
