@@ -111,7 +111,7 @@ function Navbar() {
           <img
             src="https://cdn-icons-png.flaticon.com/512/15178/15178747.png"
             alt="menu-icon"
-            className="w-8 h-8"
+            className="w-6 h-6"
           />
         </button>
       </div>
