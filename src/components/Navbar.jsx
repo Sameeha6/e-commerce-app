@@ -119,7 +119,7 @@ function Navbar() {
               <NavLink to="/Order" className="hover:bg-gray-500 rounded-md py-1 px-3"><li>Order</li></NavLink>
               <div className=' relative items-center space-x-4  md:block'>
             <input onChange={(e)=>setSearchTerm(e.target.value)} value={searchTerm} type="search" placeholder='Search here...' 
-                className=' p-2 border rounded-md w-[200px] sm:w-[200px] md:w-[300px] lg:w-[400px] outline-none text-black' />
+                className=' p-2 border rounded-md w-[300px] sm:w-[300px] md:w-[400px] lg:w-[500px] outline-none text-black' />
             {showModal && products.length>0 && (
               <div className='absolute top-7 right-0 mt-3 overflow-y-auto z-50 w-full max-h-60 bg-white rounded-lg border-b-2 text-black text-sm'>
                 <ul className='divide-y divide-gray-300'>
