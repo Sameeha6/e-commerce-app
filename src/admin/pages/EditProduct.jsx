@@ -32,7 +32,7 @@ export const EditProduct = () => {
         const res = await editProduct(id, product);
         if (res) alert("Product updated successfully!");
         else alert("Failed to update product!");
-        navigate("/admin/manageproduct");
+        navigate("/admin/manageproducts");
     }
 
   return (

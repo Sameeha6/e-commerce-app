@@ -111,6 +111,34 @@
       "price": "79900",
       "description": "6GB RAM + 128GB Storage | 6.1-inch Super Retina XDR Display | IP68 Water & Dust Resistance | A16 Bionic Chip | 48MP Advanced Dual Rear Cameras | USB-C Charging Port | Dynamic Island | iOS 17 | All-day battery life",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmEySZbSt-fxNzPAawDIt436kLn73hTACcGQ&s"
+    },
+    {
+      "id": "7b4b",
+      "name": "Samsung Galaxy Z Flip 5",
+      "price": "99999",
+      "description": "8GB RAM + 256GB Storage | 6.7-inch Foldable Dynamic AMOLED 2X Display | IPX8 Water Resistance | Snapdragon 8 Gen 2 | 12MP Dual Rear Cameras | 3700mAh Battery | 25W Fast Charging",
+      "image": "https://m.media-amazon.com/images/I/61u3CHg6ZyL.jpg"
+    },
+    {
+      "id": "252a",
+      "name": "Xiaomi Redmi Note 13 Pro",
+      "price": "24999",
+      "description": "12GB RAM + 256GB Storage | 6.67-inch AMOLED Display | IP53 Splash Resistance | Dimensity 9200+ | 200MP Triple Rear Cameras | 5000mAh Battery | 67W Fast Charging",
+      "image": "https://cdn.mediapark.uz/imgs/80288b45-3366-40ca-bfd2-52ed4306d0de.webp"
+    },
+    {
+      "id": "28a8",
+      "name": "Honor Magic 5 Pro",
+      "price": "74999",
+      "description": "12GB RAM + 512GB Storage | 6.81-inch OLED Display | IP68 Water & Dust Resistance | Snapdragon 8 Gen 2 | 50MP Quad Rear Cameras | 5100mAh Battery | 66W Wired + 50W Wireless Charging",
+      "image": "https://www.clove.co.uk/cdn/shop/products/honor-magic5-pro-black-front-back_1200x.jpg?v=1681740686"
+    },
+    {
+      "id": "989c",
+      "name": "Realme Narzo 60 Pro",
+      "price": "23999",
+      "description": "12GB RAM + 256GB Storage | 6.7-inch AMOLED Display | IP53 Splash Resistance | Dimensity 7050 | 100MP Dual Rear Cameras | 5000mAh Battery | 67W Fast Charging",
+      "image": "https://cdn.beebom.com/mobile/2023/10/Realme-Narzo-60-Pro-5G.jpg"
     }
   ],
   "users": [
@@ -165,6 +193,24 @@
       "password": "0000",
       "role": "user",
       "blocked": true,
+      "cart": []
+    },
+    {
+      "id": "8850",
+      "name": "sangeetha",
+      "email": "sangeetha@gmail.com",
+      "password": "9999",
+      "role": "user",
+      "blocked": false,
+      "cart": []
+    },
+    {
+      "id": "a85f",
+      "name": "aysha",
+      "email": "aysha@gmail.com",
+      "password": "aysha",
+      "role": "user",
+      "blocked": false,
       "cart": []
     }
   ],
@@ -250,6 +296,60 @@
         "Number": "9876435123"
       },
       "date": "2024-12-25T06:44:30.995Z"
+    },
+    {
+      "id": "6b78",
+      "userId": "a85f",
+      "userName": "aysha",
+      "items": [
+        {
+          "id": "7b4b",
+          "name": "Samsung Galaxy Z Flip 5",
+          "price": "99999",
+          "description": "8GB RAM + 256GB Storage | 6.7-inch Foldable Dynamic AMOLED 2X Display | IPX8 Water Resistance | Snapdragon 8 Gen 2 | 12MP Dual Rear Cameras | 3700mAh Battery | 25W Fast Charging",
+          "image": "https://m.media-amazon.com/images/I/61u3CHg6ZyL.jpg",
+          "qty": 1
+        },
+        {
+          "id": "28a8",
+          "name": "Honor Magic 5 Pro",
+          "price": "74999",
+          "description": "12GB RAM + 512GB Storage | 6.81-inch OLED Display | IP68 Water & Dust Resistance | Snapdragon 8 Gen 2 | 50MP Quad Rear Cameras | 5100mAh Battery | 66W Wired + 50W Wireless Charging",
+          "image": "https://www.clove.co.uk/cdn/shop/products/honor-magic5-pro-black-front-back_1200x.jpg?v=1681740686",
+          "qty": 2
+        }
+      ],
+      "total": 249997,
+      "paymentMethod": "Cash on Delivery",
+      "address": {
+        "Name": "aysha",
+        "Address": "Kadalundi , Kozhikode",
+        "Number": "989543210"
+      },
+      "date": "2024-12-25T16:32:32.870Z"
+    },
+    {
+      "id": "e116",
+      "userId": "8850",
+      "userName": "sangeetha",
+      "items": [
+        {
+          "id": "105d",
+          "name": "iPhone 15",
+          "price": "79900",
+          "description": "6GB RAM + 128GB Storage | 6.1-inch Super Retina XDR Display | IP68 Water & Dust Resistance | A16 Bionic Chip | 48MP Advanced Dual Rear Cameras | USB-C Charging Port | Dynamic Island | iOS 17 | All-day battery life",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmEySZbSt-fxNzPAawDIt436kLn73hTACcGQ&s",
+          "qty": 1
+        }
+      ],
+      "total": 79900,
+      "paymentMethod": "Google Pay",
+      "address": {
+        "Name": "sangeetha",
+        "Address": "Olipprm , Malappuram",
+        "Number": "4532891209"
+      },
+      "date": "2024-12-25T17:20:00.254Z"
     }
   ]
 }

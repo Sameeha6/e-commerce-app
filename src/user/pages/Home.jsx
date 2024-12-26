@@ -57,7 +57,7 @@ const Home = () => {
                 <div className="flex justify-between items-center mt-4">
                 <span className="text-xs font-bold">₹{mobile.price}</span>
                 <button 
-                  className="bg-orange-500 text-white px-1 py-2 rounded-full hover:bg-orange-600 min-w-[80px] text-xs"
+                  className="border-2 border-orange-300 text-black px-1 py-2 rounded-full hover:text-orange-600 min-w-[80px] text-xs font-medium"
                   onClick={(e) =>{
                     e.preventDefault()
                     addToCart(mobile)

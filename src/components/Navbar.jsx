@@ -51,7 +51,7 @@ function Navbar() {
 
   return (
 
-    <div className='Navbar  sticky top-0 w-full h-[77px] p-4 bg-white flex items-center z-50 justify-between shadow-lg'>
+    <div className='Navbar  sticky top-0 w-full h-[86px] p-4 bg-gray-900 text-white flex items-center z-50 justify-between shadow-xl'>
         <div className='flex items-center'>
             <img src="https://cdn-icons-png.flaticon.com/512/12517/12517190.png" alt="logo" className='w-14 h-14'/>
             <p className='font-bold text-2xl md:2xl'>.com</p>
@@ -65,9 +65,9 @@ function Navbar() {
         </div>
         <div className=' relative items-center space-x-4  md:block'>
             <input onChange={(e)=>setSearchTerm(e.target.value)} value={searchTerm} type="search" placeholder='Search here...' 
-                className=' p-2 border rounded-md w-[200px] sm:w-[300px] md:w-[400px] lg:w-[500px] outline-none' />
+                className=' p-2 border rounded-md w-[300px] sm:w-[300px] md:w-[400px] lg:w-[500px] outline-none text-black' />
             {showModal && products.length>0 && (
-              <div className='absolute top-7 right-0 mt-3 overflow-y-auto z-50 w-full max-h-60 bg-white border rounded-lg'>
+              <div className='absolute top-7 right-0 mt-3 overflow-y-auto z-50 w-full max-h-60 bg-white rounded-lg border-b-2 text-black text-sm'>
                 <ul className='divide-y divide-gray-300'>
                   {products.map(product=>(
                     <li key={product.id} onClick={()=>handleProductClick(product.id)} className='cursor-pointer p-2'>{product.name}</li>
@@ -84,7 +84,7 @@ function Navbar() {
               
                 <span className="font-normal text-sm hidden md:block">{userName}</span>
                 <button
-                  className='bg-orange-500 px-3 py-1 rounded-full hover:bg-orange-600 text-white hidden md:block'
+                  className='bg-gray-700 px-3 py-1 rounded-full hover:bg-gray-800 text-white hidden md:block'
                   onClick={handleLogout} // Trigger the logout function
                 >
                   Sign Out
@@ -93,7 +93,7 @@ function Navbar() {
             ) : (
               <div className='hidden md:block'>
                 <NavLink to="/login">
-                  <button className='bg-orange-500 text-white px-3 py-1 rounded-full hover:bg-orange-600'>
+                  <button className='bg-gray-700 text-white px-3 py-1 rounded-full hover:bg-gray-800'>
                     Login
                   </button>
                 </NavLink>
@@ -104,7 +104,7 @@ function Navbar() {
         <div className="block md:hidden">
         <button onClick={toggleMenu}>
           <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/255px-Hamburger_icon.svg.png"
+            src="https://cdn-icons-png.flaticon.com/512/15178/15178747.png"
             alt="menu-icon"
             className="w-7 h-7"
           />
@@ -112,11 +112,11 @@ function Navbar() {
       </div>
 
       {isMenuOpen && (
-        <div className="absolute top-[70px] left-0 w-full bg-gray-50 shadow-md md:hidden z-40 flex flex-col items-center">
+        <div className="absolute top-[70px] left-0 w-full bg-gray-900 shadow-md md:hidden z-40 flex flex-col items-center">
           <ul className="flex flex-col items-center space-y-2 p-4 font-semibold text-lg ">
-              <NavLink to="/" className="hover:text-orange-500 border-b-2 "><li>Home</li></NavLink>
-              <NavLink to="/Cart" className="hover:text-orange-500 border-b-2"><li>Cart {cart.length >0 && (<span className='text-sm px-1 rounded-full bg-orange-400'>{cart.length}</span>)}</li></NavLink>
-              <NavLink to="/Order" className="hover:text-orange-500 border-b-2"><li>Order</li></NavLink>
+              <NavLink to="/" className="hover:bg-gray-500 rounded-md py-1 px-3  "><li>Home</li></NavLink>
+              <NavLink to="/Cart" className=" hover:bg-gray-500 rounded-md py-1 px-3"><li>Cart {cart.length >0 && (<span className='text-sm px-1 rounded-full bg-orange-400'>{cart.length}</span>)}</li></NavLink>
+              <NavLink to="/Order" className="hover:bg-gray-500 rounded-md py-1 px-3"><li>Order</li></NavLink>
               
             <div className="flex items-center space-x-2 space-y-2">
                 <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="profile" className='w-8 h-8' />
@@ -124,7 +124,7 @@ function Navbar() {
               <>
                 <span className="font-normal text-sm">{userName}</span>
                 <button
-                  className='text-orange-500 rounded-full hover:text-orange-600 text-base font-normal'
+                  className='bg-gray-700 text-white px-3 py-1 rounded-full hover:bg-gray-800 text-base'
                   onClick={handleLogout} // Trigger the logout function
                 >
                   Sign Out
@@ -133,7 +133,7 @@ function Navbar() {
             ) : (
               <>
                 <NavLink to="/login">
-                  <button className='bg-orange-500 text-white px-3 py-1 rounded-full hover:bg-orange-600 text-base font-normal'>
+                  <button className='bg-gray-700 text-white px-3 py-1 rounded-full hover:bg-gray-800 text-base'>
                     Login
                   </button>
                 </NavLink>
