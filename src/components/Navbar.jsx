@@ -122,7 +122,7 @@ function Navbar() {
         className="fixed inset-0 z-40"
         onClick={handleOutsideClick}
         >
-        <div className="absolute top-[70px] left-0 w-full bg-gray-900 shadow-md md:hidden z-40 flex flex-col items-center">
+        <div className="absolute left-0 w-full bg-gray-900 shadow-md md:hidden z-40 flex flex-col items-center">
           <ul className="flex flex-col items-center space-y-2 p-4 font-semibold text-lg ">
               <NavLink to="/" className="hover:bg-gray-500 rounded-md py-2 px-4  "><li>Home</li></NavLink>
               <NavLink to="/Cart" className=" hover:bg-gray-500 rounded-md py-1 px-3"><li>Cart {cart.length >0 && (<span className='text-sm px-1 rounded-full bg-orange-400'>{cart.length}</span>)}</li></NavLink>
