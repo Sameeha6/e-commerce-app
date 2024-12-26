@@ -1,13 +1,13 @@
 import React,{useEffect, useState} from 'react'
 import { NavLink, useNavigate } from 'react-router-dom';
-import { useUser } from '../contexts/UserContext'; // Import the UserContext hook
+import { useUser } from '../contexts/UserContext'; 
 import { useCart } from "../contexts/CartContext";
 import { getAllProduct } from '../api/productApi';
 
 function Navbar() {
-    const { handleLogout } = useUser(); // Get username and logout from context
+    const { handleLogout } = useUser(); 
     const { cart } = useCart();
-    const [isMenuOpen, setIsMenuOpen] = useState(false); // State for hamburger men
+    const [isMenuOpen, setIsMenuOpen] = useState(false); 
     const userName = localStorage.getItem("userName")
     const [showModal, setShowModal] = useState(false)
     const [searchTerm,setSearchTerm] = useState("")
@@ -85,7 +85,7 @@ function Navbar() {
                 <span className="font-normal text-sm hidden md:block">{userName}</span>
                 <button
                   className='bg-gray-700 px-3 py-1 rounded-full hover:bg-gray-800 text-white hidden md:block'
-                  onClick={handleLogout} // Trigger the logout function
+                  onClick={handleLogout} 
                 >
                   Sign Out
                 </button>
@@ -125,7 +125,7 @@ function Navbar() {
                 <span className="font-normal text-sm">{userName}</span>
                 <button
                   className='bg-gray-700 text-white px-3 py-1 rounded-full hover:bg-gray-800 text-base'
-                  onClick={handleLogout} // Trigger the logout function
+                  onClick={handleLogout} 
                 >
                   Sign Out
                 </button>
